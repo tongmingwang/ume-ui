@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/ulayer/',
   lastUpdated: true,
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/logo.ico',
   },
   locales: {
     root: {
