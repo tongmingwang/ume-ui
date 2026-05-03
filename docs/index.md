@@ -7,7 +7,8 @@ hero:
   text: 'A Vue3 UI library'
   tagline: A lightweight and elegant component library built for Vue 3
   image:
-    src: /logo.svg
+    dark: /logo.svg
+    light: /dark.svg
     alt: ume-ui
   actions:
     - theme: brand

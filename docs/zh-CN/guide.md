@@ -134,7 +134,7 @@ app.mount('#app');
       `,
       };
 
-      createApp(App).use(UlLayer.default).mount('#app');
+      createApp(App).use(UmeUi.default).mount('#app');
     </script>
   </body>
 </html>

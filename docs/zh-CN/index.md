@@ -7,7 +7,8 @@ hero:
   text: '一个 Vue3 的 UI 库'
   tagline: 专为 Vue 3 打造的轻量级优雅组件库
   image:
-    src: /logo.svg
+    dark: /logo.svg
+    light: /dark.svg
     alt: ume-ui
   actions:
     - theme: brand

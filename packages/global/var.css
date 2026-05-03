@@ -1,4 +1,9 @@
-:root {
+:root,
+html[data-ume-ui-theme='light'],
+body[data-ume-ui-theme='light'],
+[data-ume-ui-theme='light'],
+html.light,
+body.light {
   /* primary */
   --u-primary-50: #e6f7ff;
   --u-primary-100: #bae7ff;
@@ -68,6 +73,7 @@
 /* 暗黑主题 */
 html[data-ume-ui-theme='dark'],
 body[data-ume-ui-theme='dark'],
+[data-ume-ui-theme='dark'],
 html.dark,
 body.dark {
   --u-bg: #0f0f0f;

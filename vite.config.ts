@@ -21,7 +21,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'packages/ume-ui/index.ts'),
-      name: 'ULayer',
+      name: 'UmeUi',
       fileName: (format) => `ume-ui.${format}.js`,
       formats: ['es', 'umd', 'cjs'],
     },

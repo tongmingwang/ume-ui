@@ -115,7 +115,6 @@ Include the library directly in HTML using CDN:
       <u-button color="primary" @click="count++">{{ count }}</u-button>
     </div>
 
-    <!-- Import UlLayer -->
     <script src="https://unpkg.com/ume-ui/dist/ume-ui.umd.js"></script>
 
     <script>
@@ -134,7 +133,7 @@ Include the library directly in HTML using CDN:
       `,
       };
 
-      createApp(App).use(UlLayer.default).mount('#app');
+      createApp(App).use(UmeUi.default).mount('#app');
     </script>
   </body>
 </html>

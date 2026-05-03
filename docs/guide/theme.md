@@ -1,5 +1,7 @@
 # Theme Colors
 
+ume-ui provides a complete theme customization system based on CSS variables. The following are the default theme color variables. You can directly copy and use them or perform custom overwriting.
+
 ## Primary Colors
 
 ```css
@@ -163,53 +165,44 @@ document.documentElement.setAttribute('data-ume-ui-theme', 'dark');
 document.documentElement.setAttribute('data-ume-ui-theme', 'light');
 ```
 
-:::demo
-
-```vue
-<template>
-  <div class="theme-demo">
-    <div class="theme-controls">
-      <button @click="toggleTheme" class="theme-btn">
-        {{
-          theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'
-        }}
-      </button>
-    </div>
-
-    <div class="color-section">
-      <h3>Primary Colors</h3>
-      <div class="color-row">
-        <div
-          v-for="shade in shades"
-          :key="shade"
-          class="color-box"
-          :style="{ backgroundColor: `var(--u-primary-${shade})` }">
-          <span class="color-value">--u-primary-{{ shade }}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="color-section">
-      <h3>Success Colors</h3>
-      <div class="color-row">
-        <div
-          v-for="shade in shades"
-          :key="shade"
-          class="color-box"
-          :style="{ backgroundColor: `var(--u-success-${shade})` }">
-          <span class="color-value">--u-success-{{ shade }}</span>
-        </div>
+<div class="theme-demo" :data-ume-ui-theme="theme">
+  <div class="theme-controls">
+    <u-button @click="toggleTheme" color="primary">
+      {{
+        theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'
+      }}
+    </u-button>
+  </div>
+  <div class="color-section">
+    <h3>Primary Colors</h3>
+    <div class="color-row">
+      <div
+        v-for="shade in shades"
+        :key="shade"
+        class="color-box"
+        :style="{ backgroundColor: `var(--u-primary-${shade})` }">
+        <span class="color-value">--u-primary-{{ shade }}</span>
       </div>
     </div>
   </div>
-</template>
+  <div class="color-section">
+    <h3>Success Colors</h3>
+    <div class="color-row">
+      <div
+        v-for="shade in shades"
+        :key="shade"
+        class="color-box"
+        :style="{ backgroundColor: `var(--u-success-${shade})` }">
+        <span class="color-value">--u-success-{{ shade }}</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script setup>
   import { ref, onMounted } from 'vue';
-
   const theme = ref('light');
   const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
-
   const toggleTheme = () => {
     if (theme.value === 'dark') {
       document.documentElement.setAttribute('data-ume-ui-theme', 'light');
@@ -219,10 +212,8 @@ document.documentElement.setAttribute('data-ume-ui-theme', 'light');
       theme.value = 'dark';
     }
   };
-
   onMounted(() => {
-    const currentTheme =
-      document.documentElement.getAttribute('data-ume-ui-theme') || 'light';
+    const currentTheme = document.documentElement.getAttribute('data-ume-ui-theme') || 'light';
     theme.value = currentTheme;
   });
 </script>
@@ -279,6 +270,3 @@ document.documentElement.setAttribute('data-ume-ui-theme', 'light');
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   }
 </style>
-```
-
-:::

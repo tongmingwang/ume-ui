@@ -165,44 +165,39 @@ document.documentElement.setAttribute('data-ume-ui-theme', 'dark');
 document.documentElement.setAttribute('data-ume-ui-theme', 'light');
 ```
 
-:::demo
+<div class="theme-demo" :data-ume-ui-theme="theme">
+  <div class="theme-controls">
+    <u-button @click="toggleTheme" color="primary" variant="contained">
+      {{ theme === 'dark' ? '切换到明亮主题' : '切换到暗黑主题' }}
+    </u-button>
+  </div>
 
-```vue
-<template>
-  <div class="theme-demo">
-    <div class="theme-controls">
-      <button @click="toggleTheme" class="theme-btn">
-        {{ theme === 'dark' ? '切换到明亮主题' : '切换到暗黑主题' }}
-      </button>
-    </div>
-
-    <div class="color-section">
-      <h3>主要颜色</h3>
-      <div class="color-row">
-        <div
-          v-for="shade in shades"
-          :key="shade"
-          class="color-box"
-          :style="{ backgroundColor: `var(--u-primary-${shade})` }">
-          <span class="color-value">--u-primary-{{ shade }}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="color-section">
-      <h3>成功颜色</h3>
-      <div class="color-row">
-        <div
-          v-for="shade in shades"
-          :key="shade"
-          class="color-box"
-          :style="{ backgroundColor: `var(--u-success-${shade})` }">
-          <span class="color-value">--u-success-{{ shade }}</span>
-        </div>
+  <div class="color-section">
+    <h3>主要颜色</h3>
+    <div class="color-row">
+      <div
+        v-for="shade in shades"
+        :key="shade"
+        class="color-box"
+        :style="{ backgroundColor: `var(--u-primary-${shade})` }">
+        <span class="color-value">--u-primary-{{ shade }}</span>
       </div>
     </div>
   </div>
-</template>
+
+  <div class="color-section">
+    <h3>成功颜色</h3>
+    <div class="color-row">
+      <div
+        v-for="shade in shades"
+        :key="shade"
+        class="color-box"
+        :style="{ backgroundColor: `var(--u-success-${shade})` }">
+        <span class="color-value">--u-success-{{ shade }}</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script setup>
   import { ref, onMounted } from 'vue';
@@ -212,10 +207,8 @@ document.documentElement.setAttribute('data-ume-ui-theme', 'light');
 
   const toggleTheme = () => {
     if (theme.value === 'dark') {
-      document.documentElement.setAttribute('data-ume-ui-theme', 'light');
       theme.value = 'light';
     } else {
-      document.documentElement.setAttribute('data-ume-ui-theme', 'dark');
       theme.value = 'dark';
     }
   };
@@ -279,6 +272,3 @@ document.documentElement.setAttribute('data-ume-ui-theme', 'light');
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   }
 </style>
-```
-
-:::
