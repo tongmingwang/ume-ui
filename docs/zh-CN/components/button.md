@@ -66,7 +66,7 @@
 
 ## 不同尺寸
 
-按钮有三种尺寸：小号([small](file:///d:\github\ulayer\packages\ulayer\input\src\types.ts#L8-L8))、中号([medium](file:///d:\github\ulayer\packages\ulayer\input\src\types.ts#L9-L9))、大号([large](file:///d:\github\ulayer\packages\ulayer\input\src\types.ts#L10-L10))。
+按钮有三种尺寸：小号([small](file:///d:\github\ume-ui\packages\ume-ui\input\src\types.ts#L8-L8))、中号([medium](file:///d:\github\ume-ui\packages\ume-ui\input\src\types.ts#L9-L9))、大号([large](file:///d:\github\ume-ui\packages\ume-ui\input\src\types.ts#L10-L10))。
 
 <div class="button-group">
   <u-button size="small">小号按钮</u-button>
@@ -126,7 +126,7 @@
 
 ## 禁用状态
 
-通过 [disabled](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L4-L4) 属性禁用按钮。
+通过 [disabled](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L4-L4) 属性禁用按钮。
 
 <div class="button-group">
   <u-button disabled>禁用按钮</u-button>
@@ -152,7 +152,7 @@
 
 ## 加载状态
 
-通过 [loading](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L5-L5) 属性显示加载状态。
+通过 [loading](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L5-L5) 属性显示加载状态。
 
 <div class="button-group">
   <u-button loading>加载中...</u-button>
@@ -178,7 +178,7 @@
 
 ## 自定义尺寸
 
-可以通过 [width](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L8-L8) 和 [height](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L7-L7) 属性自定义按钮尺寸。
+可以通过 [width](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L8-L8) 和 [height](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L7-L7) 属性自定义按钮尺寸。
 
 <div class="button-group">
   <u-button width="120px" height="60px">自定义尺寸</u-button>

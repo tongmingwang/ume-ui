@@ -3,7 +3,7 @@
   <p>A modern Vue 3 UI library built with TypeScript</p>
   <p>一个基于 Vue 3 + TypeScript 构建的现代化 UI 组件库</p>
   <p>
-    <a href="https://tongmingwang.github.io/ulayer/">📖 Documentation | 文档</a>
+    <a href="https://tongmingwang.github.io/ume-ui/">📖 Documentation | 文档</a>
   </p>
 </div>
 
@@ -37,10 +37,10 @@
 
 ```bash
 # npm
-npm install ulayer
+npm install ume-ui
 
 # pnpm
-pnpm add ulayer
+pnpm add ume-ui
 ```
 
 ---
@@ -51,19 +51,21 @@ pnpm add ulayer
 
 ```ts
 import { createApp } from 'vue';
-import ULayer from 'ulayer';
-import 'ulayer/dist/style.css';
+import ume from 'ume-ui';
+import 'ume-ui/dist/color.css';
+import 'ume-ui/dist/index.css';
 
 const app = createApp(App);
-app.use(ULayer);
+app.use(ume);
 ```
 
 ### On-demand Import | 按需引入
 
 ```ts
-import { Button, Input, ripple } from 'ulayer';
-import 'ulayer/dist/button/style.css';
-import 'ulayer/dist/input/style.css';
+import { Button, Input, ripple } from 'ume-ui';
+import 'ume-ui/dist/color.css';
+import 'ume-ui/dist/button/index.css';
+import 'ume-ui/dist/input/index.css';
 
 // Register component
 app.component('UButton', Button);
@@ -83,7 +85,7 @@ app.directive('ripple', ripple);
 
 <script setup lang="ts">
   import { ref } from 'vue';
-  import { Button, Input, ripple } from 'ulayer';
+  import { Button, Input, ripple } from 'ume-ui';
 
   const value = ref('');
 </script>
@@ -95,15 +97,15 @@ app.directive('ripple', ripple);
 
 | Component | Status | Docs                                                              | Description            |
 | --------- | ------ | ----------------------------------------------------------------- | ---------------------- |
-| Button    | ✅     | [Button](https://tongmingwang.github.io/ulayer/components/button) | Basic button component |
-| Input     | ✅     | [Input](https://tongmingwang.github.io/ulayer/components/input)   | Input field component  |
+| Button    | ✅     | [Button](https://tongmingwang.github.io/ume-ui/components/button) | Basic button component |
+| Input     | ✅     | [Input](https://tongmingwang.github.io/ume-ui/components/input)   | Input field component  |
 | Layout    | 🚧     | WIP                                                               | Layout components      |
 
 ## 📐 Available Directives | 可用指令
 
 | Directive | Status | Docs                                                              | Description                   |
 | --------- | ------ | ----------------------------------------------------------------- | ----------------------------- |
-| v-ripple  | ✅     | [Ripple](https://tongmingwang.github.io/ulayer/directives/ripple) | Material Design ripple effect |
+| v-ripple  | ✅     | [Ripple](https://tongmingwang.github.io/ume-ui/directives/ripple) | Material Design ripple effect |
 
 ---
 

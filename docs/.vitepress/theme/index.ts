@@ -5,7 +5,7 @@ import DefaultTheme from 'vitepress/theme';
 import './style.css';
 import '../../../output/dist/color.css';
 import '../../../output/dist/index.css';
-import ulayer from '../../../output';
+import ume from '../../../output';
 
 export default {
   extends: DefaultTheme,
@@ -15,12 +15,12 @@ export default {
     });
   },
   enhanceApp({ app, router, siteData }) {
-    // 注册 ulayer 组件库
-    app.use(ulayer);
+    // 注册 ume-ui 组件库
+    app.use(ume);
 
-    // 监听主题变化并设置 data-ulayer-theme 属性
+    // 监听主题变化并设置 data-ume-theme 属性
     const updateUlayerTheme = (theme: 'dark' | 'light') => {
-      document.documentElement.setAttribute('data-ulayer-theme', theme);
+      document.documentElement.setAttribute('data-ume-ui-theme', theme);
     };
 
     // 初始化主题

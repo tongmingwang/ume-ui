@@ -2,37 +2,41 @@
 outline: deep
 ---
 
-# 开始使用 ulayer
+# 开始使用 ume-ui
 
-ulayer 是一个 Vue 3 组件库，旨在帮助开发者使用可重用的 UI 组件快速构建现代化的 Web 应用程序。
+ume-ui 是一个 Vue 3 组件库，旨在帮助开发者使用可重用的 UI 组件快速构建现代化的 Web 应用程序。
 
 ## 安装
 
-您可以使用任何流行的包管理器来安装 ulayer：
+您可以使用任何流行的包管理器来安装 ume-ui：
 
 ### 使用 npm
+
 ```bash
-npm install ulayer
+npm install ume-ui
 ```
 
 ### 使用 pnpm
+
 ```bash
-pnpm add ulayer
+pnpm add ume-ui
 ```
 
 ### 使用 yarn
+
 ```bash
-yarn add ulayer
+yarn add ume-ui
 ```
 
 ### 使用 cnpm (中国镜像)
+
 ```bash
-cnpm install ulayer
+cnpm install ume-ui
 ```
 
 ## 使用方法
 
-有几种方式可以在项目中使用 ulayer：
+有几种方式可以在项目中使用 ume-ui：
 
 ### 全局引入
 
@@ -40,18 +44,19 @@ cnpm install ulayer
 
 ```js
 // main.js 或 main.ts
-import { createApp } from 'vue'
-import App from './App.vue'
-import ULayers from 'ulayer'
-import 'ulayer/dist/style.css' // 引入 CSS
+import { createApp } from 'vue';
+import App from './App.vue';
+import ULayers from 'ume-ui';
+import 'ume-ui/dist/color.css'; // Import the CSS colors
+import 'ume-ui/dist/index.css'; // Import the CSS
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(ULayers)
-app.mount('#app')
+app.use(ULayers);
+app.mount('#app');
 ```
 
-然后您可以在应用程序中的任何位置使用任何 ulayer 组件：
+然后您可以在应用程序中的任何位置使用任何 ume-ui 组件：
 
 ```vue
 <template>
@@ -70,9 +75,9 @@ app.mount('#app')
 </template>
 
 <script setup>
-import { UButton, UInput } from 'ulayer'
-import 'ulayer/dist/button/index.css'  // 导入组件特定的样式
-import 'ulayer/dist/input/index.css'
+  import { UButton, UInput } from 'ume-ui';
+  import 'ume-ui/dist/button/index.css'; // 导入组件特定的样式
+  import 'ume-ui/dist/input/index.css';
 </script>
 ```
 
@@ -84,8 +89,8 @@ import 'ulayer/dist/input/index.css'
 </template>
 
 <script setup>
-import Button from 'ulayer/button'
-import 'ulayer/dist/button/index.css'
+  import Button from 'ume-ui/button';
+  import 'ume-ui/dist/button/index.css';
 </script>
 ```
 
@@ -96,48 +101,48 @@ import 'ulayer/dist/button/index.css'
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UlLayer 示例</title>
-  <!-- 引入 Vue -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <!-- 引入 UlLayer 样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/ulayer/dist/style.css">
-</head>
-<body>
-  <div id="app">
-    <u-button color="primary" @click="count++">{{ count }}</u-button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UlLayer 示例</title>
+    <!-- 引入 Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- 引入 UlLayer 样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/ume-ui/dist/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <u-button color="primary" @click="count++">{{ count }}</u-button>
+    </div>
 
-  <!-- 引入 UlLayer -->
-  <script src="https://unpkg.com/ulayer/dist/ulayer.umd.js"></script>
-  
-  <script>
-    const { createApp, ref } = Vue
-    
-    const App = {
-      setup() {
-        const count = ref(0)
-        
-        return {
-          count
-        }
-      },
-      template: `
+    <!-- 引入 UlLayer -->
+    <script src="https://unpkg.com/ume-ui/dist/ume-ui.umd.js"></script>
+
+    <script>
+      const { createApp, ref } = Vue;
+
+      const App = {
+        setup() {
+          const count = ref(0);
+
+          return {
+            count,
+          };
+        },
+        template: `
         <u-button color="primary" @click="count++">{{ count }}</u-button>
-      `
-    }
-    
-    createApp(App).use(UlLayer.default).mount('#app')
-  </script>
-</body>
+      `,
+      };
+
+      createApp(App).use(UlLayer.default).mount('#app');
+    </script>
+  </body>
 </html>
 ```
 
 ## 支持的组件
 
-目前，ulayer 包含以下组件：
+目前，ume-ui 包含以下组件：
 
 - [Button](/zh-CN/components/button) - 多种变体的多功能按钮组件
 - [Input](/zh-CN/components/input) - 具有各种选项的输入字段组件
@@ -148,4 +153,4 @@ import 'ulayer/dist/button/index.css'
 
 - 查看我们的 [Button 组件文档](/zh-CN/components/button) 了解更多功能
 - 探索 [Input 组件文档](/zh-CN/components/input) 了解输入处理
-- 访问 GitHub 仓库: [https://github.com/tongmingwang/ulayer](https://github.com/tongmingwang/ulayer)
+- 访问 GitHub 仓库: [https://github.com/tongmingwang/ume-ui](https://github.com/tongmingwang/ume-ui)

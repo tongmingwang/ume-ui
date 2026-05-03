@@ -5,6 +5,7 @@
 ## 语言切换 / Language Switching
 
 在中英文文档间切换:
+
 - 英文版: [docs/components/input.md](../../../docs/components/input.md)
 - 中文版: [docs/zh-CN/components/input.md](../../../docs/zh-CN/components/input.md)
 
@@ -24,20 +25,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
-const input3 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
+  const input3 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -59,20 +60,20 @@ const input3 = ref('');
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
-const input3 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
+  const input3 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -80,7 +81,7 @@ const input3 = ref('');
 
 ## 输入框尺寸 / Input Sizes
 
-输入框有三种尺寸：小号([small](file:///d:\github\ulayer\packages\ulayer\input\src\types.ts#L8-L8))、中号([medium](file:///d:\github\ulayer\packages\ulayer\input\src\types.ts#L9-L9))、大号([large](file:///d:\github\ulayer\packages\ulayer\input\src\types.ts#L10-L10))。
+输入框有三种尺寸：小号([small](file:///d:\github\ume-ui\packages\ume-ui\input\src\types.ts#L8-L8))、中号([medium](file:///d:\github\ume-ui\packages\ume-ui\input\src\types.ts#L9-L9))、大号([large](file:///d:\github\ume-ui\packages\ume-ui\input\src\types.ts#L10-L10))。
 
 :::demo
 
@@ -94,20 +95,20 @@ const input3 = ref('');
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
-const input3 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
+  const input3 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -115,7 +116,7 @@ const input3 = ref('');
 
 ## 可清除输入框 / Clearable Input
 
-通过 [clearable](file:///d:\github\ulayer\packages\ulayer\input\src\types.ts#L6-L6) 属性启用清除按钮。
+通过 [clearable](file:///d:\github\ume-ui\packages\ume-ui\input\src\types.ts#L6-L6) 属性启用清除按钮。
 
 :::demo
 
@@ -127,18 +128,18 @@ const input3 = ref('');
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
+  const input1 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -153,25 +154,31 @@ const input1 = ref('');
 ```vue
 <template>
   <div class="input-group">
-    <u-input v-model="input1" placeholder="带前缀图标的输入框" prefix-icon="🔍" />
-    <u-input v-model="input2" placeholder="带后缀图标的输入框" suffix-icon="🔒" />
+    <u-input
+      v-model="input1"
+      placeholder="带前缀图标的输入框"
+      prefix-icon="🔍" />
+    <u-input
+      v-model="input2"
+      placeholder="带后缀图标的输入框"
+      suffix-icon="🔒" />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 

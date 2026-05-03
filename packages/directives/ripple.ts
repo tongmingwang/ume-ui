@@ -58,6 +58,10 @@ const ripple = {
       'position: absolute;inset: 0;overflow: hidden;pointer-events: none;';
     el.appendChild(rippleContainer);
     el.rippleContainer = rippleContainer;
+    // 判断当前节点是否是有定位
+    if (window.getComputedStyle(el).position === 'static') {
+      el.style.position = 'relative';
+    }
     el.addEventListener('mousedown', (e: MouseEvent) => add(el, e), true);
   },
 };

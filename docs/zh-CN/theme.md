@@ -1,20 +1,20 @@
 # 主题定制 / Theme Customization
 
-ulayer 组件库提供了灵活的主题定制能力，允许开发者自定义组件的外观和风格。
+ume-ui 组件库提供了灵活的主题定制能力，允许开发者自定义组件的外观和风格。
 
 ## 使用预设主题 / Using Predefined Themes
 
-ulayer 默认提供了一些预设主题，您可以直接使用：
+ume-ui 默认提供了一些预设主题，您可以直接使用：
 
 ```js
-import { createApp } from 'vue'
-import ULayers from 'ulayer'
-import 'ulayer/dist/style.css'
+import { createApp } from 'vue';
+import ULayers from 'ume-ui';
+import 'ume-ui/dist/style.css';
 
 // 使用默认主题
-const app = createApp(App)
-app.use(ULayers)
-app.mount('#app')
+const app = createApp(App);
+app.use(ULayers);
+app.mount('#app');
 ```
 
 ## 自定义主题变量 / Customizing Theme Variables
@@ -29,12 +29,12 @@ app.mount('#app')
   --u-button-warning-color: #e6a23c;
   --u-button-danger-color: #f56c6c;
   --u-button-info-color: #909399;
-  
+
   /* 输入框相关变量 */
   --u-input-border-color: #dcdfe6;
   --u-input-focus-color: #409eff;
   --u-input-disabled-color: #f5f7fa;
-  
+
   /* 全局颜色变量 */
   --u-color-primary: #409eff;
   --u-color-success: #67c23a;
@@ -46,7 +46,7 @@ app.mount('#app')
 
 ## 深色主题 / Dark Theme
 
-ulayer 支持深色主题，只需在根元素上添加 [dark](file:///d:\github\ulayer\packages\ulayer\global\var.css#L1-L1) 类即可：
+ume-ui 支持深色主题，只需在根元素上添加 [dark](file:///d:\github\ume-ui\packages\ume-ui\global\var.css#L1-L1) 类即可：
 
 ```html
 <html class="dark">
@@ -58,10 +58,10 @@ ulayer 支持深色主题，只需在根元素上添加 [dark](file:///d:\github
 
 ```js
 // 切换到深色主题
-document.documentElement.classList.add('dark')
+document.documentElement.classList.add('dark');
 
 // 切换回浅色主题
-document.documentElement.classList.remove('dark')
+document.documentElement.classList.remove('dark');
 ```
 
 ## 定制组件样式 / Customizing Component Styles

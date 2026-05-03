@@ -18,20 +18,20 @@ The simplest form of input that can have different types, sizes and other proper
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
-const input3 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
+  const input3 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -53,20 +53,20 @@ Input supports different types such as text, password, email, etc.
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
-const input3 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
+  const input3 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -88,20 +88,20 @@ Input fields have three sizes: small, medium, and large.
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
-const input3 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
+  const input3 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -109,7 +109,7 @@ const input3 = ref('');
 
 ## Clearable Input
 
-Enable the clear button using the [clearable](file:///d:\github\ulayer\packages\ulayer\input/src/types.ts#L6-L6) property.
+Enable the clear button using the [clearable](file:///d:\github\ume-ui\packages\ume-ui\input/src/types.ts#L6-L6) property.
 
 :::demo
 
@@ -121,18 +121,18 @@ Enable the clear button using the [clearable](file:///d:\github\ulayer\packages\
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
+  const input1 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 
@@ -147,25 +147,31 @@ Add icons to the input field.
 ```vue
 <template>
   <div class="input-group">
-    <u-input v-model="input1" placeholder="Input with prefix icon" prefix-icon="🔍" />
-    <u-input v-model="input2" placeholder="Input with suffix icon" suffix-icon="🔒" />
+    <u-input
+      v-model="input1"
+      placeholder="Input with prefix icon"
+      prefix-icon="🔍" />
+    <u-input
+      v-model="input2"
+      placeholder="Input with suffix icon"
+      suffix-icon="🔒" />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import UInput from '@/ulayer/input';
+  import { ref } from 'vue';
+  import UInput from '@/ume-ui/input';
 
-const input1 = ref('');
-const input2 = ref('');
+  const input1 = ref('');
+  const input2 = ref('');
 </script>
 
 <style scoped>
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
 ```
 

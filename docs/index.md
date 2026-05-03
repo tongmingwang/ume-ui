@@ -8,14 +8,14 @@ hero:
   tagline: A lightweight and elegant component library built for Vue 3
   image:
     src: /logo.svg
-    alt: ulayer
+    alt: ume-ui
   actions:
     - theme: brand
       text: Get Started
       link: /guide
     - theme: alt
       text: View on GitHub
-      link: https://github.com/tongmingwang/ulayer
+      link: https://github.com/tongmingwang/ume-ui
 
 features:
   - icon: 🚀

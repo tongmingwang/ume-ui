@@ -134,7 +134,7 @@ Buttons support two special shapes: round and circle.
 
 ## Disabled State
 
-Disable the button using the [disabled](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L4-L4) property.
+Disable the button using the [disabled](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L4-L4) property.
 
 <div class="button-group">
   <u-button disabled>Disabled</u-button>
@@ -160,7 +160,7 @@ Disable the button using the [disabled](file:///d:\github\ulayer\packages\ulayer
 
 ## Loading State
 
-Show loading state using the [loading](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L5-L5) property.
+Show loading state using the [loading](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L5-L5) property.
 
 <div class="button-group">
   <u-button loading>Loading...</u-button>
@@ -186,7 +186,7 @@ Show loading state using the [loading](file:///d:\github\ulayer\packages\ulayer\
 
 ## Custom Size
 
-Customize button dimensions using the [width](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L8-L8) and [height](file:///d:\github\ulayer\packages\ulayer\button/src/types.ts#L7-L7) properties.
+Customize button dimensions using the [width](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L8-L8) and [height](file:///d:\github\ume-ui\packages\ume-ui\button/src/types.ts#L7-L7) properties.
 
 <div class="button-group">
   <u-button width="120px" height="60px">Custom Size</u-button>

@@ -8,14 +8,14 @@ hero:
   tagline: 专为 Vue 3 打造的轻量级优雅组件库
   image:
     src: /logo.svg
-    alt: ulayer
+    alt: ume-ui
   actions:
     - theme: brand
       text: 开始使用
       link: /zh-CN/guide
     - theme: alt
       text: GitHub 源码
-      link: https://github.com/tongmingwang/ulayer
+      link: https://github.com/tongmingwang/ume-ui
 
 features:
   - icon: 🚀

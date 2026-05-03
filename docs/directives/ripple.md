@@ -13,7 +13,7 @@ The ripple directive adds Material Design ripple effects to interactive elements
 </template>
 
 <script setup>
-  import { ripple } from 'ulayer';
+  import { ripple } from 'ume-ui';
 </script>
 
 <style scoped>
@@ -58,7 +58,7 @@ The ripple directive adds Material Design ripple effects to interactive elements
 </template>
 
 <script setup>
-  import { ripple } from 'ulayer';
+  import { ripple } from 'ume-ui';
 </script>
 
 <style scoped>
@@ -113,7 +113,7 @@ The ripple effect works by:
 
 ## Usage Notes
 
-- The ripple directive is automatically registered when importing ulayer
+- The ripple directive is automatically registered when importing ume-ui
 - Works best on elements with `position: relative` or `position: absolute`
 - For circular elements, the ripple will originate from the center
 - The ripple color matches the element's text color

@@ -1,20 +1,20 @@
 # Theme Customization
 
-ulayer component library provides flexible theme customization capabilities, allowing developers to customize the appearance and style of components.
+ume-ui component library provides flexible theme customization capabilities, allowing developers to customize the appearance and style of components.
 
 ## Using Predefined Themes
 
-ulayer provides some predefined themes by default, which you can use directly:
+ume-ui provides some predefined themes by default, which you can use directly:
 
 ```js
-import { createApp } from 'vue'
-import ULayers from 'ulayer'
-import 'ulayer/dist/style.css'
+import { createApp } from 'vue';
+import ULayers from 'ume-ui';
+import 'ume-ui/dist/style.css';
 
 // Use default theme
-const app = createApp(App)
-app.use(ULayers)
-app.mount('#app')
+const app = createApp(App);
+app.use(ULayers);
+app.mount('#app');
 ```
 
 ## Customizing Theme Variables
@@ -29,12 +29,12 @@ You can customize themes using CSS variables:
   --u-button-warning-color: #e6a23c;
   --u-button-danger-color: #f56c6c;
   --u-button-info-color: #909399;
-  
+
   /* Input related variables */
   --u-input-border-color: #dcdfe6;
   --u-input-focus-color: #409eff;
   --u-input-disabled-color: #f5f7fa;
-  
+
   /* Global color variables */
   --u-color-primary: #409eff;
   --u-color-success: #67c23a;
@@ -46,7 +46,7 @@ You can customize themes using CSS variables:
 
 ## Dark Theme
 
-ulayer supports dark theme, simply add the [dark](file:///d:\github\ulayer\packages\ulayer\global\var.css#L1-L1) class to the root element:
+ume-ui supports dark theme, simply add the [dark](file:///d:\github\ume-ui\packages\ume-ui\global\var.css#L1-L1) class to the root element:
 
 ```html
 <html class="dark">
@@ -58,10 +58,10 @@ Or toggle dynamically:
 
 ```js
 // Switch to dark theme
-document.documentElement.classList.add('dark')
+document.documentElement.classList.add('dark');
 
 // Switch back to light theme
-document.documentElement.classList.remove('dark')
+document.documentElement.classList.remove('dark');
 ```
 
 ## Customizing Component Styles

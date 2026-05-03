@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-const rootPath = '../../packages/ulayer';
+const rootPath = '../../packages/ume-ui';
 // 读取路由文件
-const demoPages = import.meta.glob(`../../packages/ulayer/**/Test.vue`);
+const demoPages = import.meta.glob(`../../packages/ume-ui/**/Test.vue`);
 
 console.log(demoPages, 'demoPages');
 const routes = Object.keys(demoPages).map((key) => {

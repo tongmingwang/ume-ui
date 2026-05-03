@@ -1,6 +1,7 @@
 # Theme Colors
 
 ## Primary Colors
+
 ```css
 --u-primary-50: #e6f7ff;
 --u-primary-100: #bae7ff;
@@ -15,6 +16,7 @@
 ```
 
 ## Neutral Colors
+
 ```css
 --u-info-50: #ffffff;
 --u-info-100: #fafafa;
@@ -29,6 +31,7 @@
 ```
 
 ## Success Colors
+
 ```css
 --u-success-50: #f6ffed;
 --u-success-100: #d9f7be;
@@ -43,6 +46,7 @@
 ```
 
 ## Warning Colors
+
 ```css
 --u-warning-50: #fff7e6;
 --u-warning-100: #ffe7ba;
@@ -57,6 +61,7 @@
 ```
 
 ## Error Colors
+
 ```css
 --u-error-50: #fff1f0;
 --u-error-100: #ffccc7;
@@ -71,13 +76,15 @@
 ```
 
 ## Background Colors
+
 ```css
 --u-bg: #fff;
 --u-container-bg: #fafafa;
 ```
 
 ## Dark Theme Colors
-When `data-ulayer-theme="dark"`:
+
+When `data-ume-ui-theme="dark"`:
 
 ```css
 --u-bg: #0f0f0f;
@@ -145,48 +152,51 @@ When `data-ulayer-theme="dark"`:
 ```
 
 ## Theme Switching
+
 To switch themes programmatically:
+
 ```javascript
 // Enable dark theme
-document.documentElement.setAttribute('data-ulayer-theme', 'dark');
+document.documentElement.setAttribute('data-ume-ui-theme', 'dark');
 
 // Enable light theme
-document.documentElement.setAttribute('data-ulayer-theme', 'light');
+document.documentElement.setAttribute('data-ume-ui-theme', 'light');
 ```
 
 :::demo
+
 ```vue
 <template>
   <div class="theme-demo">
     <div class="theme-controls">
       <button @click="toggleTheme" class="theme-btn">
-        {{ theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme' }}
+        {{
+          theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'
+        }}
       </button>
     </div>
-    
+
     <div class="color-section">
       <h3>Primary Colors</h3>
       <div class="color-row">
-        <div 
-          v-for="shade in shades" 
+        <div
+          v-for="shade in shades"
           :key="shade"
           class="color-box"
-          :style="{ backgroundColor: `var(--u-primary-${shade})` }"
-        >
+          :style="{ backgroundColor: `var(--u-primary-${shade})` }">
           <span class="color-value">--u-primary-{{ shade }}</span>
         </div>
       </div>
     </div>
-    
+
     <div class="color-section">
       <h3>Success Colors</h3>
       <div class="color-row">
-        <div 
-          v-for="shade in shades" 
+        <div
+          v-for="shade in shades"
           :key="shade"
           class="color-box"
-          :style="{ backgroundColor: `var(--u-success-${shade})` }"
-        >
+          :style="{ backgroundColor: `var(--u-success-${shade})` }">
           <span class="color-value">--u-success-{{ shade }}</span>
         </div>
       </div>
@@ -195,78 +205,80 @@ document.documentElement.setAttribute('data-ulayer-theme', 'light');
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+  import { ref, onMounted } from 'vue';
 
-const theme = ref('light');
-const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+  const theme = ref('light');
+  const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-const toggleTheme = () => {
-  if (theme.value === 'dark') {
-    document.documentElement.setAttribute('data-ulayer-theme', 'light');
-    theme.value = 'light';
-  } else {
-    document.documentElement.setAttribute('data-ulayer-theme', 'dark');
-    theme.value = 'dark';
-  }
-};
+  const toggleTheme = () => {
+    if (theme.value === 'dark') {
+      document.documentElement.setAttribute('data-ume-ui-theme', 'light');
+      theme.value = 'light';
+    } else {
+      document.documentElement.setAttribute('data-ume-ui-theme', 'dark');
+      theme.value = 'dark';
+    }
+  };
 
-onMounted(() => {
-  const currentTheme = document.documentElement.getAttribute('data-ulayer-theme') || 'light';
-  theme.value = currentTheme;
-});
+  onMounted(() => {
+    const currentTheme =
+      document.documentElement.getAttribute('data-ume-ui-theme') || 'light';
+    theme.value = currentTheme;
+  });
 </script>
 
 <style scoped>
-.theme-demo {
-  padding: 20px;
-  border-radius: 8px;
-  background-color: var(--u-bg);
-  color: var(--u-info-900);
-}
+  .theme-demo {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--u-bg);
+    color: var(--u-info-900);
+  }
 
-.theme-controls {
-  margin-bottom: 20px;
-}
+  .theme-controls {
+    margin-bottom: 20px;
+  }
 
-.theme-btn {
-  padding: 8px 16px;
-  background-color: var(--u-primary-500);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  .theme-btn {
+    padding: 8px 16px;
+    background-color: var(--u-primary-500);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-.color-section {
-  margin-bottom: 30px;
-}
+  .color-section {
+    margin-bottom: 30px;
+  }
 
-.color-section h3 {
-  margin-bottom: 10px;
-  color: var(--u-info-900);
-}
+  .color-section h3 {
+    margin-bottom: 10px;
+    color: var(--u-info-900);
+  }
 
-.color-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  .color-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-.color-box {
-  width: 100px;
-  height: 60px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+  .color-box {
+    width: 100px;
+    height: 60px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-.color-value {
-  font-size: 10px;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
+  .color-value {
+    font-size: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
 </style>
 ```
+
 :::

@@ -12,7 +12,7 @@ export default defineConfig({
     vue(),
     dts({
       outDirs: resolve(__dirname, 'output/dist'),
-      include: ['packages/ulayer/**/*.ts'],
+      include: ['packages/ume-ui/**/*.ts'],
       staticImport: true,
       insertTypesEntry: true,
       cleanVueFileName: true,
@@ -20,9 +20,9 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'packages/ulayer/index.ts'),
+      entry: resolve(__dirname, 'packages/ume-ui/index.ts'),
       name: 'ULayer',
-      fileName: (format) => `ulayer.${format}.js`,
+      fileName: (format) => `ume-ui.${format}.js`,
       formats: ['es', 'umd', 'cjs'],
     },
     rollupOptions: {
