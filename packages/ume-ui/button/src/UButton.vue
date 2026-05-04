@@ -28,7 +28,7 @@
   import type { UButtonGroupProps } from '../../button-group/src/types';
 
   const emit = defineEmits(['click']);
-  const buttonGroupProps = inject<UButtonGroupProps>('u-button-group');
+  const buttonGroupProps = inject<UButtonGroupProps>('u-button-group', {});
   const props = withDefaults(defineProps<ButtonProps>(), {
     color: '',
     variant: '',

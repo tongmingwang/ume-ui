@@ -130,32 +130,31 @@ Click on any icon to copy `<u-icon name="..." />` code.
   align-items: center;
   justify-content: center;
   padding: 20px 12px;
-  border: 1px solid #e4e7ed;
+  border: 1px solid var(--u-info-500);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
-  background: #fff;
+  background: var(--u-bg);
 }
 .icon-card:hover {
-  border-color: #409eff;
+  border-color: var(--u-primary-600);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(64, 158, 255, 0.15);
 }
 .icon-card.copied {
-  border-color: #67c23a;
-  background: #f0f9eb;
+  border-color: var(--u-success-600);
+  background: var(--u-success-100);
 }
 .icon-card .icon-name {
   margin-top: 8px;
   font-size: 12px;
-  color: #606266;
+  color: var(--u-info-900);
   text-align: center;
   word-break: break-all;
 }
 .icon-card .icon-class {
   margin-top: 4px;
   font-size: 11px;
-  color: #909399;
+  color: var(--u-info-600);
   font-family: monospace;
 }
 </style>

@@ -38,3 +38,7 @@ features:
     title: 暗黑模式
     details: 内置暗黑模式，舒适的夜间浏览体验
 ---
+
+```bash
+pnpm add ume-ui
+```

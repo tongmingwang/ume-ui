@@ -1,68 +1,129 @@
-import { throttle } from '@/utils/common';
-async function removeRipple(ripple: HTMLElement) {
+interface RippleHTMLElement extends HTMLElement {
+  rippleContainer?: HTMLElement;
+  _rippleCleanup?: () => void;
+}
+
+async function fadeOutRipple(ripple: HTMLElement) {
+  ripple.animate(
+    {
+      opacity: 0,
+    },
+    {
+      duration: 400,
+      easing: 'ease-out',
+      fill: 'forwards',
+    }
+  );
+
   await Promise.all(
     ripple.getAnimations().map((animation) => animation.finished)
   );
   ripple.remove();
 }
 
-function addRipple(el: any, e: MouseEvent) {
+function createRipple(el: RippleHTMLElement, clientX: number, clientY: number) {
   const cStyle = window.getComputedStyle(el);
   const rect = el.getBoundingClientRect();
-  const w = parseInt(cStyle.width);
-  const h = parseInt(cStyle.height);
-  let r = 0;
-  const isCircle = w - h <= 1;
+
+  const width = rect.width;
+  const height = rect.height;
+  const diagonal = Math.sqrt(width ** 2 + height ** 2);
+  const radius = diagonal;
+  const isCircle = Math.abs(width - height) <= 1;
+
+  const ripple = document.createElement('span');
+  ripple.style.position = 'absolute';
+  ripple.style.width = `${radius * 2}px`;
+  ripple.style.height = `${radius * 2}px`;
+  ripple.style.borderRadius = '50%';
+  ripple.style.pointerEvents = 'none';
+
+  const rippleOpacity = 0.2;
+  ripple.style.backgroundColor = cStyle.color;
+  ripple.style.opacity = `${rippleOpacity}`;
+
   if (isCircle) {
-    r = Math.max(w, h);
+    ripple.style.left = `${(width - radius * 2) / 2}px`;
+    ripple.style.top = `${(height - radius * 2) / 2}px`;
   } else {
-    r = Math.sqrt(w * w + h * h);
+    ripple.style.left = `${clientX - rect.left - radius}px`;
+    ripple.style.top = `${clientY - rect.top - radius}px`;
   }
 
-  const ripple = document.createElement('div');
-  if (isCircle) {
-    ripple.style.left = 0 + 'px';
-    ripple.style.top = 0 + 'px';
-  } else {
-    ripple.style.left = e.clientX - rect.left - r / 2 + 'px';
-    ripple.style.top = e.clientY - rect.top - r / 2 + 'px';
-  }
-  // 计算ripple的宽高
-  ripple.style.width = ripple.style.height = r + 'px';
-  ripple.style.setProperty('pointer-events', 'none');
-  ripple.style.setProperty('background-color', cStyle.color);
-  ripple.style.borderRadius = '50%';
-  ripple.style.position = 'absolute';
   ripple.animate(
-    [
-      { transform: 'scale(0)', opacity: 0.33 },
-      { transform: 'scale(1)', opacity: 0.08, offset: 0.8 },
-      { transform: 'scale(1)', opacity: 0 },
-    ],
     {
-      duration: 300,
+      transform: ['scale(0)', 'scale(1)'],
+    },
+    {
+      duration: 550,
       fill: 'forwards',
     }
   );
-  el.rippleContainer.appendChild(ripple);
-  removeRipple(ripple);
+
+  el.rippleContainer!.appendChild(ripple);
+
+  const startFadeOut = () => {
+    fadeOutRipple(ripple);
+    document.removeEventListener('mouseup', startFadeOut);
+    document.removeEventListener('touchend', startFadeOut);
+    document.removeEventListener('touchcancel', startFadeOut);
+  };
+
+  document.addEventListener('mouseup', startFadeOut);
+  document.addEventListener('touchend', startFadeOut);
+  document.addEventListener('touchcancel', startFadeOut);
 }
 
-const add = throttle(addRipple, 100);
+function stopEvent(e: Event) {
+  e.stopPropagation();
+}
 
 const ripple = {
-  mounted(el: any) {
+  mounted(el: RippleHTMLElement) {
     if (!el) return;
-    const rippleContainer = document.createElement('div');
-    rippleContainer.style =
-      'position: absolute;inset: 0;overflow: hidden;pointer-events: none;';
+
+    const rippleContainer = document.createElement('span');
+    rippleContainer.style.cssText =
+      'position: absolute;inset: 0;overflow: hidden;pointer-events: none;border-radius: inherit;';
     el.appendChild(rippleContainer);
     el.rippleContainer = rippleContainer;
-    // 判断当前节点是否是有定位
+
     if (window.getComputedStyle(el).position === 'static') {
       el.style.position = 'relative';
     }
-    el.addEventListener('mousedown', (e: MouseEvent) => add(el, e), true);
+    el.style.overflow = 'hidden';
+    el.style.zIndex = el.style.zIndex || '1';
+
+    const handleMouseDown = (e: MouseEvent) => {
+      createRipple(el, e.clientX, e.clientY);
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      stopEvent(e);
+      const touch = e.touches[0];
+      createRipple(el, touch.clientX, touch.clientY);
+    };
+
+    const handleMouseLeave = () => {
+      const ripples = el.rippleContainer!.children;
+      for (let i = 0; i < ripples.length; i++) {
+        fadeOutRipple(ripples[i] as HTMLElement);
+      }
+    };
+
+    el.addEventListener('mousedown', handleMouseDown, true);
+    el.addEventListener('touchstart', handleTouchStart, true);
+    el.addEventListener('mouseleave', handleMouseLeave, true);
+
+    el._rippleCleanup = () => {
+      el.removeEventListener('mousedown', handleMouseDown, true);
+      el.removeEventListener('touchstart', handleTouchStart, true);
+      el.removeEventListener('mouseleave', handleMouseLeave, true);
+    };
+  },
+
+  unmounted(el: RippleHTMLElement) {
+    el._rippleCleanup?.();
   },
 };
 

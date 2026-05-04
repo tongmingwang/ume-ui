@@ -38,3 +38,7 @@ features:
     title: Dark Mode
     details: Built-in dark mode support for comfortable viewing
 ---
+
+```bash
+pnpm add ume-ui
+```
