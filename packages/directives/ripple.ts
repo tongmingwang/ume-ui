@@ -36,7 +36,7 @@ function addRipple(el: any, e: MouseEvent) {
   ripple.animate(
     [
       { transform: 'scale(0)', opacity: 0.33 },
-      { transform: 'scale(1)', opacity: 0.05, offset: 0.8 },
+      { transform: 'scale(1)', opacity: 0.08, offset: 0.8 },
       { transform: 'scale(1)', opacity: 0 },
     ],
     {

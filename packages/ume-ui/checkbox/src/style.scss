@@ -1,0 +1,66 @@
+.u-checkbox {
+  --u-checkbox-size: 36px;
+  --u-checkbox-bg: transparent;
+  --u-checkbox-color: var(--u-info-900);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: var;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  &.is-checked,
+  &.is-indeterminate {
+    --u-checkbox-color: var(--u-primary-500);
+  }
+
+  &_input {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--u-checkbox-size);
+    height: var(--u-checkbox-size);
+    background-color: var(--u-checkbox-bg);
+    color: var(--u-checkbox-color);
+    transition: all 0.2s;
+    border-radius: var(--u-checkbox-size);
+    &:hover {
+      --u-checkbox-bg: var(--u-primary-50);
+    }
+  }
+
+  &_original {
+    display: none;
+  }
+
+  &_label {
+    line-height: var(--u-checkbox-size);
+    padding-right: 8px;
+  }
+
+  @each $color in primary, success, warning, error, info {
+    &--#{$color} {
+      --u-checkbox-color: var(--u-#{$color}-600);
+
+      &:hover {
+        .u-checkbox_input {
+          --u-checkbox-bg: var(--u-#{$color}-50);
+        }
+      }
+      &.is-checked,
+      &.is-indeterminate {
+        --u-checkbox-color: var(--u-#{$color}-500);
+      }
+    }
+  }
+}

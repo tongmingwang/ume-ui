@@ -1,5 +1,5 @@
 import type { App, Plugin } from 'vue';
-import UInput from './src/input.vue';
+import UInput from './src/UInput.vue';
 
 UInput.install = (app: App) => {
   app.component(UInput.name!, UInput);

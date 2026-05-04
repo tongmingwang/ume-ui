@@ -6,12 +6,14 @@ import './style.css';
 import '../../../output/dist/color.css';
 import '../../../output/dist/index.css';
 import ume from '../../../output';
+import BackToTop from './components/BackToTop.vue';
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
+      'layout-bottom': () => h(BackToTop),
     });
   },
   enhanceApp({ app, router, siteData }) {

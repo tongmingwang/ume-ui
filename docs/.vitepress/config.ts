@@ -37,6 +37,8 @@ export default defineConfig({
             items: [
               { text: 'Button', link: '/components/button' },
               { text: 'Button Group', link: '/components/button-group' },
+              { text: 'Fab', link: '/components/fab' },
+              { text: 'Checkbox', link: '/components/checkbox' },
               { text: 'Input', link: '/components/input' },
             ],
           },
@@ -101,6 +103,8 @@ export default defineConfig({
             items: [
               { text: '按钮', link: '/zh-CN/components/button' },
               { text: '按钮组', link: '/zh-CN/components/button-group' },
+              { text: '悬浮按钮', link: '/zh-CN/components/fab' },
+              { text: '复选框', link: '/zh-CN/components/checkbox' },
               { text: '输入框', link: '/zh-CN/components/input' },
             ],
           },

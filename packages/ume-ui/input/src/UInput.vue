@@ -26,7 +26,7 @@
     name: 'UInput',
   });
   defineExpose({
-    $el: inputRef.value,
+    $el: inputRef,
     focus: () => inputRef.value?.focus(),
     blur: () => inputRef.value?.blur(),
   });

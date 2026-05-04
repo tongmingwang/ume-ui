@@ -1,5 +1,5 @@
 import type { App, Plugin } from 'vue';
-import UButtonGroup from './src/Main.vue';
+import UButtonGroup from './src/UButtonGroup.vue';
 
 UButtonGroup.install = (app: App) => {
   app.component(UButtonGroup.name!, UButtonGroup);

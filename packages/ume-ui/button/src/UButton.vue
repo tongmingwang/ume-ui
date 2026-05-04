@@ -68,7 +68,7 @@
 
   // 暴露方法
   defineExpose({
-    $el: buttonRef.value,
+    $el: buttonRef,
     focus: () => buttonRef.value?.focus(),
     blur: () => buttonRef.value?.blur(),
   });

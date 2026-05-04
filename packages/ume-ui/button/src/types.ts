@@ -3,8 +3,8 @@ export interface ButtonProps {
   size?: 'small' | 'medium' | 'large' | '';
   disabled?: boolean;
   loading?: boolean;
-  variant?: 'outlined' | 'text' | 'contained' | 'tonal' | ''; // text
-  shape?: 'round' | 'circle' | ''; // round circle
+  variant?: 'outlined' | 'text' | 'contained' | 'tonal' | '';
+  shape?: 'round' | 'circle' | '';
   height?: string;
   width?: string;
 }
