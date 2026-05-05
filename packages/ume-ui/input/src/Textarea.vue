@@ -4,7 +4,13 @@
     class="u-textarea"
     ref="input"
     :type="props.type"
-    :value="props.modelValue"></textarea>
+    :value="props.modelValue"
+    :placeholder="props.placeholder"
+    :disabled="props.disabled"
+    :readonly="props.readonly"
+    @input="handleInput"
+    @blur="handleBlur"
+    @focus="handleFocus"></textarea>
 </template>
 
 <script setup lang="ts">

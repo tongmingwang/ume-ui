@@ -20,7 +20,7 @@
 
   &.is-checked,
   &.is-indeterminate {
-    --u-checkbox-color: var(--u-primary-500);
+    --u-checkbox-color: var(--u-primary-600);
   }
 
   &_input {
@@ -59,7 +59,7 @@
       }
       &.is-checked,
       &.is-indeterminate {
-        --u-checkbox-color: var(--u-#{$color}-500);
+        --u-checkbox-color: var(--u-#{$color}-600);
       }
     }
   }

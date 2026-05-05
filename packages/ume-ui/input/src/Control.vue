@@ -64,22 +64,21 @@
     width: calc(var(--u-input-height) * 0.8);
     height: 100%;
     cursor: pointer;
-    background-color: transparent;
     border: none;
     outline: none;
     appearance: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--u-primary-50);
+    background: transparent;
     transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     border-left: 1px solid var(--u-input-border-color);
     svg {
-      width: 1.2em;
-      height: 1.2em;
+      width: 1em;
+      height: 1em;
     }
     &:hover {
-      background: var(--u-primary-100);
+      background: var(--u-primary-50);
     }
     &[disabled] {
       pointer-events: none;

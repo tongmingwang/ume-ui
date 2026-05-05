@@ -9,6 +9,9 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     logo: '/logo.png',
+    search: {
+      provider: 'local',
+    },
   },
   locales: {
     root: {
@@ -48,6 +51,7 @@ export default defineConfig({
               { text: 'InputNumber', link: '/components/input-number' },
               { text: 'Textarea', link: '/components/textarea' },
               { text: 'Checkbox', link: '/components/checkbox' },
+              { text: 'Radio', link: '/components/radio' },
             ],
           },
           {
@@ -122,6 +126,7 @@ export default defineConfig({
               { text: '数字输入框', link: '/zh-CN/components/input-number' },
               { text: '文本域', link: '/zh-CN/components/textarea' },
               { text: '复选框', link: '/zh-CN/components/checkbox' },
+              { text: '单选框', link: '/zh-CN/components/radio' },
             ],
           },
           {

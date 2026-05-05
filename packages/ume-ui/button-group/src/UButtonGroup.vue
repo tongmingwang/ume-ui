@@ -7,6 +7,7 @@
 <script setup lang="ts">
   import { provide, computed } from 'vue';
   import type { UButtonGroupProps } from './types';
+  import { UButtonGroupProvider } from './constants';
 
   defineOptions({
     name: 'UButtonGroup',
@@ -19,7 +20,7 @@
       props.vertical && 'u-button-group--vertical',
     ].filter(Boolean);
   });
-  provide('u-button-group', props);
+  provide(UButtonGroupProvider, props);
 </script>
 
 <style lang="scss">

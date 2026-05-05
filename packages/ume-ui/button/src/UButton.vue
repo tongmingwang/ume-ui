@@ -26,9 +26,10 @@
   import { computed, useTemplateRef, inject } from 'vue';
   import ripple from '@/directives/ripple';
   import type { UButtonGroupProps } from '../../button-group/src/types';
+  import { UButtonGroupProvider } from '@/ume-ui/button-group/src/constants';
 
   const emit = defineEmits(['click']);
-  const buttonGroupProps = inject<UButtonGroupProps>('u-button-group', {});
+  const buttonGroupProps = inject<UButtonGroupProps>(UButtonGroupProvider, {});
   const props = withDefaults(defineProps<ButtonProps>(), {
     color: '',
     variant: '',

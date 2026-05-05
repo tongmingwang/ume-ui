@@ -1,0 +1,60 @@
+.u-radio {
+  --u-radio-size: 36px;
+  --u-radio-bg: var(--u-radio-bg);
+  --u-radio-color: var(--u-radio-color);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+  &.is-checked {
+    --u-radio-color: var(--u-primary-600);
+  }
+
+  &_input {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--u-radio-size);
+    height: var(--u-radio-size);
+    background-color: var(--u-radio-bg);
+    color: var(--u-radio-color);
+    transition: all 0.2s;
+    border-radius: 50%;
+    &:hover {
+      --u-radio-bg: var(--u-primary-50);
+    }
+  }
+
+  &_original {
+    display: none;
+  }
+
+  &_label {
+    line-height: var(--u-radio-size);
+    padding-right: 8px;
+  }
+
+  @each $color in primary, success, warning, error, info {
+    &--#{$color} {
+      --u-radio-color: var(--u-#{$color}-600);
+
+      &:hover {
+        --u-radio-bg: var(--u-#{$color}-50);
+      }
+      &.is-checked {
+        --u-radio-color: var(--u-#{$color}-600);
+      }
+    }
+  }
+}

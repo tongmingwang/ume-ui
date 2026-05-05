@@ -3,6 +3,7 @@ import button, { UButton } from './button';
 import input, { UInput } from './input';
 import buttonGroup, { UButtonGroup } from './button-group';
 import checkbox, { UCheckbox } from './checkbox';
+import { radio, radioGroup, URadio, URadioGroup } from './radio';
 import fab, { UFab } from './fab';
 import { UIcon } from './icon';
 import ripple from '@/directives/ripple';
@@ -10,7 +11,16 @@ import { useTheme } from '@/hooks/useTheme';
 
 import icon from './icon';
 
-const components: Plugin[] = [button, input, buttonGroup, checkbox, fab, icon];
+const components: Plugin[] = [
+  button,
+  input,
+  buttonGroup,
+  checkbox,
+  radio,
+  radioGroup,
+  fab,
+  icon,
+];
 
 export const install = (app: App) => {
   app.directive('ripple', ripple);
@@ -24,6 +34,8 @@ export {
   UInput,
   UButtonGroup,
   UCheckbox,
+  URadio,
+  URadioGroup,
   UFab,
   UIcon,
   ripple,
@@ -34,6 +46,7 @@ export * from './button';
 export * from './input';
 export * from './button-group';
 export * from './checkbox';
+export * from './radio';
 export * from './fab';
 
 export default {

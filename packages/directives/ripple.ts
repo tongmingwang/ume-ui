@@ -99,7 +99,7 @@ const ripple = {
       el.style.position = 'relative';
     }
     el.style.overflow = 'hidden';
-    el.style.zIndex = el.style.zIndex || '1';
+    el.style.zIndex = el.style.zIndex || '0';
 
     const handleMouseDown = (e: MouseEvent) => {
       createRipple(el, e.clientX, e.clientY);
