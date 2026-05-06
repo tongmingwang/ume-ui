@@ -52,7 +52,12 @@ export default defineConfig({
               { text: 'Textarea', link: '/components/textarea' },
               { text: 'Checkbox', link: '/components/checkbox' },
               { text: 'Radio', link: '/components/radio' },
+              { text: 'Select', link: '/components/select' },
             ],
+          },
+          {
+            text: 'Data Components',
+            items: [{ text: 'List', link: '/components/list' }],
           },
           {
             text: 'Directives',
@@ -127,7 +132,12 @@ export default defineConfig({
               { text: '文本域', link: '/zh-CN/components/textarea' },
               { text: '复选框', link: '/zh-CN/components/checkbox' },
               { text: '单选框', link: '/zh-CN/components/radio' },
+              { text: '选择器', link: '/zh-CN/components/select' },
             ],
+          },
+          {
+            text: '数据组件',
+            items: [{ text: '列表', link: '/zh-CN/components/list' }],
           },
           {
             text: '指令',

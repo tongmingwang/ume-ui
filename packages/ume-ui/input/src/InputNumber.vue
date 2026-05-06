@@ -17,10 +17,18 @@
   const props = defineProps<UInputPropsType>();
   const emits = defineEmits(['increase', 'decrease']);
   const isDisabledIncrease = computed(() => {
-    return Number(props.modelValue) >= Number(props.max);
+    return (
+      Number(props.modelValue) >= Number(props.max) ||
+      props.disabled ||
+      props.readonly
+    );
   });
   const isDisabledDecrease = computed(() => {
-    return Number(props.modelValue) <= Number(props.min);
+    return (
+      Number(props.modelValue) <= Number(props.min) ||
+      props.disabled ||
+      props.readonly
+    );
   });
   const increase = () => {
     emits('increase');

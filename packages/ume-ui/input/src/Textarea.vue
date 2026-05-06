@@ -50,6 +50,7 @@
     border-radius: inherit;
     color: inherit;
     font-size: inherit;
+    font-family: inherit;
     background: transparent;
     padding: 4px 12px;
     line-height: 1.5;

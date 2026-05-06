@@ -68,6 +68,9 @@ body.light {
   /* 背景色 */
   --u-bg: #fff;
   --u-container-bg: #fafafa;
+
+  /* hover */
+  --u-hover: rgba(0, 0, 0, 0.05);
 }
 
 /* 暗黑主题 */
@@ -138,4 +141,7 @@ body.dark {
   --u-error-700: #ffa39e;
   --u-error-800: #ffccc7;
   --u-error-900: #fff1f0;
+
+  /* hover */
+  --u-hover: rgba(255, 255, 255, 0.05);
 }

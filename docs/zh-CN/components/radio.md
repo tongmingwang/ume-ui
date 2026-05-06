@@ -116,13 +116,13 @@
 
 ## URadio API
 
-| 属性     | 说明       | 类型                                             | 默认值  |
-| -------- | ---------- | ------------------------------------------------ | ------- |
-| value    | 单选框的值 | `string \| number \| boolean`                    | -       |
-| label    | 单选框标签 | `string`                                         | -       |
-| disabled | 是否禁用   | `boolean`                                        | `false` |
-| name     | name 属性  | `string`                                         | -       |
-| color    | 主题颜色   | `primary \| success \| warning \| error \| info` | -       |
+| 属性       | 说明       | 类型                                             | 默认值  |
+| ---------- | ---------- | ------------------------------------------------ | ------- |
+| value      | 单选框的值 | `string \| number \| boolean`                    | -       |
+| label      | 单选框标签 | `string`                                         | -       |
+| disabled   | 是否禁用   | `boolean`                                        | `false` |
+| name       | name 属性  | `string`                                         | -       |
+| color      | 主题颜色   | `primary \| success \| warning \| error \| info` | -       |
 
 ## URadioGroup API
 

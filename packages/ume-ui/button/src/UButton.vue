@@ -7,7 +7,9 @@
     :disabled="props.disabled"
     v-ripple
     @click="handleClick">
-    <slot></slot>
+    <span class="u-button_inner">
+      <slot>{{ props.text }}</slot>
+    </span>
     <span v-if="props.loading" class="u-button__loading">
       <svg
         viewBox="0 0 1024 1024"

@@ -24,8 +24,18 @@ button {
   overflow: hidden;
   vertical-align: middle;
   position: relative;
-  -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
+
+  .u-button_inner {
+    flex: 1;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    opacity: 1;
+  }
   &:hover {
     --u-btn-bg: var(--u-primary-50);
   }
@@ -39,6 +49,9 @@ button {
   &.is-loading {
     pointer-events: none;
     opacity: 0.65;
+    .u-button_inner {
+      opacity: 0;
+    }
   }
   .u-button__loading {
     position: absolute;

@@ -7,4 +7,5 @@ export interface ButtonProps {
   shape?: 'round' | 'circle' | '';
   height?: string;
   width?: string;
+  text?: string;
 }

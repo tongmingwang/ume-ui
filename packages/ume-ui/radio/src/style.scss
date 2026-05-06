@@ -49,8 +49,10 @@
     &--#{$color} {
       --u-radio-color: var(--u-#{$color}-600);
 
-      &:hover {
-        --u-radio-bg: var(--u-#{$color}-50);
+      .u-radio_input {
+        &:hover {
+          --u-radio-bg: var(--u-#{$color}-50);
+        }
       }
       &.is-checked {
         --u-radio-color: var(--u-#{$color}-600);

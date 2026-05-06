@@ -6,6 +6,8 @@ import checkbox, { UCheckbox } from './checkbox';
 import { radio, radioGroup, URadio, URadioGroup } from './radio';
 import fab, { UFab } from './fab';
 import { UIcon } from './icon';
+import { list, listItem, UList, UListItem } from './list';
+import Select, { USelect } from './select';
 import ripple from '@/directives/ripple';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -20,6 +22,9 @@ const components: Plugin[] = [
   radioGroup,
   fab,
   icon,
+  list,
+  listItem,
+  Select,
 ];
 
 export const install = (app: App) => {
@@ -40,6 +45,9 @@ export {
   UIcon,
   ripple,
   useTheme,
+  UList,
+  UListItem,
+  USelect,
 };
 
 export * from './button';
