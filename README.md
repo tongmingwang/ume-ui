@@ -121,6 +121,7 @@ app.directive('ripple', ripple);
 
 | Component | Status | Docs                                                                  | Description           |
 | --------- | ------ | --------------------------------------------------------------------- | --------------------- |
+| UAlert    | ✅     | [Alert](https://tongmingwang.github.io/ume-ui/components/alert)       | Alert notification    |
 | UDialog   | ✅     | [Dialog](https://tongmingwang.github.io/ume-ui/components/dialog)     | Modal dialog          |
 | UDrawer   | ✅     | [Drawer](https://tongmingwang.github.io/ume-ui/components/drawer)     | Slide-in panel        |
 | UMask     | ✅     | [Mask](https://tongmingwang.github.io/ume-ui/components/mask)         | Mask layer            |

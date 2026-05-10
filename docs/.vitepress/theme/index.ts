@@ -7,15 +7,17 @@ import '../../../output/dist/color.css';
 import '../../../output/dist/index.css';
 import ume from '../../../output';
 import BackToTop from './components/BackToTop.vue';
+import Layout from './components/Layout.vue';
 
 export default {
   extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'layout-bottom': () => h(BackToTop),
-    });
-  },
+  // Layout: () => {
+  //   return h(DefaultTheme.Layout, null, {
+  //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
+  //     'layout-bottom': () => h(BackToTop),
+  //   });
+  // },
+  Layout,
   enhanceApp({ app, router, siteData }) {
     // 注册 ume-ui 组件库
     app.use(ume);
