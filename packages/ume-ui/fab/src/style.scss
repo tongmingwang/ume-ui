@@ -1,17 +1,16 @@
 .u-fab {
   --u-fab-size: 36px;
-  --u-fab-color: var(--u-info-50);
-  --u-fab-bg: var(--u-primary-500);
+  --u-fab-color: var(--u-text-white);
+  --u-fab-bg: var(--u-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   width: var(--u-fab-size);
   height: var(--u-fab-size);
   min-width: var(--u-fab-size);
   min-height: var(--u-fab-size);
   border-radius: 50%;
-  padding: 0 16px;
+  padding: 0;
   font-size: 14px;
   font-weight: 500;
   font-family: inherit;
@@ -45,7 +44,7 @@
   }
 
   &:active {
-    transform: translateY(0) scale(1);
+    transform: translateY(-1px) scale(1);
     box-shadow:
       0 3px 5px -1px rgba(0, 0, 0, 0.2),
       0 6px 10px 0 rgba(0, 0, 0, 0.14),
@@ -73,7 +72,7 @@
     letter-spacing: 0.5px;
   }
 
-  .u-icon__svg {
+  .u-fab__icon {
     width: 1.2em;
     height: 1.2em;
     animation: rotate 1s linear infinite;
@@ -115,12 +114,12 @@
   }
 
   // color themes
-  @each $color in primary, success, warning, error, info {
+  @each $color in primary, success, warning, error {
     &--#{$color} {
-      --u-fab-bg: var(--u-#{$color}-500);
-      --u-fab-color: var(--u-info-50);
+      --u-fab-bg: var(--u-#{$color});
+      --u-fab-color: var(--u-text-white);
       &:hover {
-        --u-fab-bg: var(--u-#{$color}-600);
+        --u-fab-bg: var(--u-#{$color}-hover);
       }
     }
   }

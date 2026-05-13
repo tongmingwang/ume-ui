@@ -1,9 +1,9 @@
 .u-input-wrapper {
   --u-input-radius: 4px;
   --u-input-height: 36px;
-  --u-input-color: var(--u-info-800);
+  --u-input-color: var(--u-text-1);
   --u-input-bg: var(--u-bg);
-  --u-input-border-color: var(--u-info-500);
+  --u-input-border-color: var(--u-border);
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -18,7 +18,7 @@
 
   &:focus-within,
   &:hover {
-    --u-input-border-color: var(--u-primary-600);
+    --u-input-border-color: var(--u-primary);
   }
   &:focus-within {
     box-shadow: inset 0 0 0 1px var(--u-input-border-color);

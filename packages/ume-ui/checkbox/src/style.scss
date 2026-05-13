@@ -1,7 +1,7 @@
 .u-checkbox {
   --u-checkbox-size: 36px;
   --u-checkbox-bg: transparent;
-  --u-checkbox-color: var(--u-info-900);
+  --u-checkbox-color: var(--u-text-1);
   display: inline-flex;
   align-items: center;
   cursor: pointer;
@@ -9,8 +9,6 @@
   font-size: 14px;
   color: var;
   vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
 
   &.is-disabled {
     pointer-events: none;
@@ -20,7 +18,7 @@
 
   &.is-checked,
   &.is-indeterminate {
-    --u-checkbox-color: var(--u-primary-600);
+    --u-checkbox-color: var(--u-primary);
   }
 
   &_input {
@@ -35,7 +33,7 @@
     transition: all 0.2s;
     border-radius: var(--u-checkbox-size);
     &:hover {
-      --u-checkbox-bg: var(--u-primary-50);
+      --u-checkbox-bg: rgba(var(--u-rgb), 0.05);
     }
   }
 
@@ -48,18 +46,17 @@
     padding-right: 8px;
   }
 
-  @each $color in primary, success, warning, error, info {
+  @each $color in primary, success, warning, error {
     &--#{$color} {
-      --u-checkbox-color: var(--u-#{$color}-600);
-
+      --u-checkbox-color: var(--u-#{$color});
       &:hover {
         .u-checkbox_input {
-          --u-checkbox-bg: var(--u-#{$color}-50);
+          --u-checkbox-bg: var(--u-#{$color}-light-hover);
         }
       }
       &.is-checked,
       &.is-indeterminate {
-        --u-checkbox-color: var(--u-#{$color}-600);
+        --u-checkbox-color: var(--u-#{$color});
       }
     }
   }

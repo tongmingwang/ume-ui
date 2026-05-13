@@ -14,8 +14,8 @@
   .u-card-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--u-info-900);
+    color: var(--u-text-1);
     margin-top: 0;
-    padding: 12px 0 8px 16px;
+    padding: 16px 0 8px 16px;
   }
 </style>

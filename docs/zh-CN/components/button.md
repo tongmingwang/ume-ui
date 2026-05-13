@@ -46,9 +46,10 @@
 
 ## 不同尺寸
 
-按钮有三种尺寸：小号([small](file:///d:\github\ume-ui\packages\ume-ui\button\src\types.ts#L9-L9))、中号([medium](file:///d:\github\ume-ui\packages\ume-ui\button\src\types.ts#L10-L10))、大号([large](file:///d:\github\ume-ui\packages\ume-ui\button\src\types.ts#L11-L11))。
+按钮有四种尺寸：迷你([mini](file:///d:\github\ume-ui\packages\ume-ui\button\src\types.ts#L3-L3))、小号([small](file:///d:\github\ume-ui\packages\ume-ui\button\src\types.ts#L9-L9))、中号([medium](file:///d:\github\ume-ui\packages\ume-ui\button\src\types.ts#L10-L10))、大号([large](file:///d:\github\ume-ui\packages\ume-ui\button\src\types.ts#L11-L11))。
 
 <div class="button-group">
+  <u-button size="mini">迷你按钮</u-button>
   <u-button size="small">小号按钮</u-button>
   <u-button size="medium">中号按钮</u-button>
   <u-button size="large">大号按钮</u-button>
@@ -56,6 +57,7 @@
 
 ```vue
 <template>
+  <u-button size="mini">迷你按钮</u-button>
   <u-button size="small">小号按钮</u-button>
   <u-button size="medium">中号按钮</u-button>
   <u-button size="large">大号按钮</u-button>
@@ -132,17 +134,17 @@
 
 ## API
 
-| 属性 | 说明 | 类型 | 默认值 |
-|------|------|------|--------|
-| color | 按钮颜色 | `default \| primary \| success \| warning \| error` | `default` |
-| variant | 按钮变体 | `contained \| outlined \| text \| tonal` | `contained` |
-| size | 按钮尺寸 | `small \| medium \| large` | `medium` |
-| shape | 按钮形状 | `default \| round \| circle` | `default` |
-| disabled | 是否禁用 | `boolean` | `false` |
-| loading | 是否加载中 | `boolean` | `false` |
-| width | 自定义宽度 | `string` | - |
-| height | 自定义高度 | `string` | - |
-| icon | 是否图标模式 | `boolean` | `false` |
+| 属性     | 说明         | 类型                                                | 默认值      |
+| -------- | ------------ | --------------------------------------------------- | ----------- |
+| color    | 按钮颜色     | `default \| primary \| success \| warning \| error` | `default`   |
+| variant  | 按钮变体     | `contained \| outlined \| text \| tonal`            | `contained` |
+| size     | 按钮尺寸     | `mini \| small \| medium \| large`                  | `medium`    |
+| shape    | 按钮形状     | `default \| round \| circle`                        | `default`   |
+| disabled | 是否禁用     | `boolean`                                           | `false`     |
+| loading  | 是否加载中   | `boolean`                                           | `false`     |
+| width    | 自定义宽度   | `string`                                            | -           |
+| height   | 自定义高度   | `string`                                            | -           |
+| icon     | 是否图标模式 | `boolean`                                           | `false`     |
 
 <style scoped>
   .button-group {

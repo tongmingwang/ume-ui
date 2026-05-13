@@ -43,8 +43,8 @@
 
 <style scoped lang="scss">
   .u-badge {
-    --u-badge-bg: var(--u-error-600);
-    --u-badge-color: var(--u-info-50);
+    --u-badge-bg: var(--u-error);
+    --u-badge-color: var(--u-text-white);
     --u-badge-radius: 12px;
     display: inline-flex;
     align-items: center;
@@ -53,14 +53,14 @@
 
     @each $color in primary, success, warning, error {
       &.u-badge--#{$color} {
-        --u-badge-bg: var(--u-#{$color}-600);
+        --u-badge-bg: var(--u-#{$color});
       }
     }
 
     &_content {
       position: absolute;
-      top: -10px;
-      left: 100%;
+      top: -12px;
+      left: calc(100% - 2px);
       display: inline-flex;
       align-items: center;
       justify-content: center;

@@ -62,6 +62,7 @@ export default defineConfig({
               { text: 'Checkbox', link: '/components/checkbox' },
               { text: 'Radio', link: '/components/radio' },
               { text: 'Select', link: '/components/select' },
+              { text: 'Switch', link: '/components/switch' },
             ],
           },
           {
@@ -156,6 +157,7 @@ export default defineConfig({
               { text: '复选框', link: '/zh-CN/components/checkbox' },
               { text: '单选框', link: '/zh-CN/components/radio' },
               { text: '选择器', link: '/zh-CN/components/select' },
+              { text: '开关', link: '/zh-CN/components/switch' },
             ],
           },
           {

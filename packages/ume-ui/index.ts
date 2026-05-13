@@ -19,12 +19,15 @@ import {
   UCardText,
   CardTitle,
   UCardTitle,
+  UCardAction,
+  CardAction,
 } from './card';
 import icon from './icon';
 import Drawer, { UDrawer } from './drawer';
 import Alert, { UAlert } from './alert';
 import Badge, { UBadge } from './badge';
 import Divider, { UDivider } from './divider';
+import Switch, { USwitch } from './switch';
 
 const components: Plugin[] = [
   button,
@@ -47,6 +50,8 @@ const components: Plugin[] = [
   Alert,
   Badge,
   Divider,
+  CardAction,
+  Switch,
 ];
 
 export const install = (app: App) => {
@@ -79,6 +84,8 @@ export {
   UAlert,
   UBadge,
   UDivider,
+  UCardAction,
+  USwitch,
 };
 
 export * from './button';

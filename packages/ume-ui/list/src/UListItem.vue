@@ -28,13 +28,13 @@
     font-weight: 500;
     font-size: 14px;
     overflow: hidden;
-    transition: background 0.2s;
+    transition: all 0.2s;
     word-wrap: normal;
     white-space: nowrap;
     min-width: fit-content;
 
     &:hover {
-      background: var(--u-hover);
+      background: rgba(var(--u-rgb),0.05);
     }
 
     &.is-disabled {
@@ -47,10 +47,10 @@
       background: var(--u-list-active-bg);
     }
 
-    @each $color in primary, success, warning, error, info {
+    @each $color in primary, success, warning, error {
       &--#{$color} {
-        --u-list-active-bg: var(--u-#{$color}-50);
-        --u-list-active-color: var(--u-#{$color}-500);
+        --u-list-active-bg: var(--u-#{$color}-light-hover);
+        --u-list-active-color: var(--u-#{$color}-active);
       }
     }
   }

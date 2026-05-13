@@ -120,8 +120,8 @@
     content &&
       content.animate(
         [
-          { transform: 'scaleY(0.88)', opacity: 0 },
-          { transform: 'scaleY(0.88)', opacity: 0, offset: 0.33 },
+          { transform: 'scaleY(0.88) translateY(-2px)', opacity: 0 },
+          { transform: 'scaleY(0.88) translateY(-2px)', opacity: 0, offset: 0.33 },
           { transform: 'scaleY(1)', opacity: 1 },
         ],
         {
@@ -140,7 +140,7 @@
       content.animate(
         [
           { transform: 'scaleY(1)', opacity: 1 },
-          { transform: 'scaleY(0.88)', opacity: 0 },
+          { transform: 'scaleY(0.88) translateY(-2px)', opacity: 0 },
         ],
         {
           duration: 200,
@@ -160,9 +160,9 @@
 
 <style scoped lang="scss">
   .u-select {
-    --u-select-border-color: var(--u-info-500);
+    --u-select-border-color: var(--u-border);
     --u-select-bg-color: var(--u-bg);
-    --u-select-text-color: var(--u-info-900);
+    --u-select-text-color: var(--u-text-1);
     --u-select-radius: 4px;
     --u-select-height: 36px;
     display: inline-flex;
@@ -180,11 +180,11 @@
     transition: all 0.2s;
 
     &:hover {
-      --u-select-border-color: var(--u-primary-600);
+      --u-select-border-color: var(--u-primary);
     }
     &.is-active {
-      --u-select-border-color: var(--u-primary-600);
-      box-shadow: 0 0 0 1px var(--u-primary-600) inset;
+      --u-select-border-color: var(--u-primary);
+      box-shadow: 0 0 0 1px var(--u-primary) inset;
     }
     &.is-disabled {
       pointer-events: none;
@@ -224,7 +224,7 @@
     pointer-events: all;
     .u-select_content {
       border-radius: 4px;
-      box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 2px 0 rgba(var(--u-rgb),0.15),0 5px 12px 0 rgba(var(--u-rgb),0.15);
       overflow: auto;
       max-height: 240px;
       position: fixed;

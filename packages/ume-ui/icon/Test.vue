@@ -7,8 +7,6 @@
 </template>
 
 <script setup lang="ts">
-  import '../../../output/dist/icon/index.css';
-  import { UIcon } from '../../../output/dist/icon';
 </script>
 
 <style scoped></style>

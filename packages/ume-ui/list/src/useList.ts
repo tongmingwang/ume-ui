@@ -25,7 +25,7 @@ export const useList = (props: UListProps, emits: any) => {
         activeItem.scrollIntoView({
           behavior: 'instant',
           block: 'nearest',
-          inline: 'nearest',
+          inline: 'start',
         });
       }
     }

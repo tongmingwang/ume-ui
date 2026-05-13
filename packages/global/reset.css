@@ -5,12 +5,13 @@ body {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   background: var(--u-container-bg);
-  color: var(--u-info-700);
+  color: var(--u-text-1);
   font-family:
     system-ui,
     -apple-system,
     Roboto,
     sans-serif;
+     scrollbar-color: rgba(var(--u-rgb),0.33) var(--u-container-bg);
 }
 * {
   box-sizing: border-box;
@@ -25,16 +26,3 @@ body {
   padding-left: 8px;
 }
 
-/* 全局滚动条样式 */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 8px;
-  background-color: transparent; /* 轨道背景色 */
-}
-::-webkit-scrollbar-thumb {
-  background-color: rgba(var(--u-rgb), 0.45); /* 滑块颜色 */
-  border-radius: 8px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(var(--u-rgb), 0.33);
-}

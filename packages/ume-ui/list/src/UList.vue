@@ -18,10 +18,10 @@
   .u-list {
     // 默认显示
     --u-list-bg: var(--u-bg);
-    --u-list-color: var(--u-info-700);
+    --u-list-color: var(--u-text-1);
     // 激活状态
-    --u-list-active-color: var(--u-primary-600);
-    --u-list-active-bg: var(--u-primary-50);
+    --u-list-active-color: var(--u-primary);
+    --u-list-active-bg: var(--u-primary-light-hover);
     display: flex;
     flex-direction: column;
     padding: 6px 0;
@@ -29,10 +29,10 @@
     overflow-y: auto;
     height: 100%;
 
-    @each $color in primary, success, warning, error, info {
+    @each $color in primary, success, warning, error {
       &--#{$color} {
-        --u-list-active-bg: var(--u-#{$color}-50);
-        --u-list-active-color: var(--u-#{$color}-500);
+        --u-list-active-bg: var(--u-#{$color}-light);
+        --u-list-active-color: var(--u-#{$color});
       }
     }
   }

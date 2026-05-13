@@ -4,13 +4,15 @@ interface RippleHTMLElement extends HTMLElement {
 }
 
 async function fadeOutRipple(ripple: HTMLElement) {
+  await Promise.all(
+    ripple.getAnimations().map((animation) => animation.finished)
+  );
   ripple.animate(
     {
       opacity: 0,
     },
     {
-      duration: 400,
-      easing: 'ease-out',
+      duration: 200,
       fill: 'forwards',
     }
   );
@@ -37,10 +39,7 @@ function createRipple(el: RippleHTMLElement, clientX: number, clientY: number) {
   ripple.style.height = `${radius * 2}px`;
   ripple.style.borderRadius = '50%';
   ripple.style.pointerEvents = 'none';
-
-  const rippleOpacity = 0.2;
   ripple.style.backgroundColor = cStyle.color;
-  ripple.style.opacity = `${rippleOpacity}`;
 
   if (isCircle) {
     ripple.style.left = `${(width - radius * 2) / 2}px`;
@@ -53,17 +52,19 @@ function createRipple(el: RippleHTMLElement, clientX: number, clientY: number) {
   ripple.animate(
     [
       {
-        transform: 'scale(0)',
+        transform: isCircle ? 'scale(0)' :'scale(0.28)',
+        offset: 0,
+        opacity: 0.06,
       },
       {
         transform: 'scale(1)',
         offset: 1,
+        opacity: 0.3,
       },
     ],
     {
-      duration: 550,
+      duration: 240,
       fill: 'forwards',
-      easing: 'linear',
     }
   );
 
@@ -72,18 +73,10 @@ function createRipple(el: RippleHTMLElement, clientX: number, clientY: number) {
   const startFadeOut = () => {
     fadeOutRipple(ripple);
     document.removeEventListener('mouseup', startFadeOut);
-    document.removeEventListener('touchend', startFadeOut);
-    document.removeEventListener('touchcancel', startFadeOut);
   };
-
   document.addEventListener('mouseup', startFadeOut);
-  document.addEventListener('touchend', startFadeOut);
-  document.addEventListener('touchcancel', startFadeOut);
 }
 
-function stopEvent(e: Event) {
-  e.stopPropagation();
-}
 
 const ripple = {
   mounted(el: RippleHTMLElement) {
@@ -105,27 +98,9 @@ const ripple = {
       createRipple(el, e.clientX, e.clientY);
     };
 
-    const handleTouchStart = (e: TouchEvent) => {
-      stopEvent(e);
-      const touch = e.touches[0];
-      createRipple(el, touch.clientX, touch.clientY);
-    };
-
-    const handleMouseLeave = () => {
-      const ripples = el.rippleContainer!.children;
-      for (let i = 0; i < ripples.length; i++) {
-        fadeOutRipple(ripples[i] as HTMLElement);
-      }
-    };
-
     el.addEventListener('mousedown', handleMouseDown, true);
-    el.addEventListener('touchstart', handleTouchStart, true);
-    el.addEventListener('mouseleave', handleMouseLeave, true);
-
     el._rippleCleanup = () => {
       el.removeEventListener('mousedown', handleMouseDown, true);
-      el.removeEventListener('touchstart', handleTouchStart, true);
-      el.removeEventListener('mouseleave', handleMouseLeave, true);
     };
   },
 

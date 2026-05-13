@@ -57,9 +57,9 @@
 
 <style scoped lang="scss">
   .u-alert {
-    --u-alert-bg: var(--u-primary-50);
-    --u-alert-color: var(--u-info-700);
-    --u-alert-icon-color: var(--u-primary-600);
+    --u-alert-bg: var(--u-primary-light);
+    --u-alert-color: var(--u-text-1);
+    --u-alert-icon-color: var(--u-primary);
     --u-alert-radius: 4px;
     margin: 8px 0;
     display: flex;
@@ -72,29 +72,29 @@
 
     @each $color in primary, success, warning, error {
       &.u-alert--#{$color} {
-        --u-alert-bg: var(--u-#{$color}-50);
-        --u-alert-icon-color: var(--u-#{$color}-600);
+        --u-alert-bg: var(--u-#{$color}-light);
+        --u-alert-icon-color: var(--u-#{$color});
 
         &.u-alert--outlined {
           --u-alert-bg: transparent;
-          border: 1px solid var(--u-#{$color}-600);
+          border: 1px solid var(--u-#{$color});
         }
         &.u-alert--filled {
-          --u-alert-bg: var(--u-#{$color}-600);
-          --u-alert-color: var(--u-info-50);
-          --u-alert-icon-color: var(--u-info-50);
+          --u-alert-bg: var(--u-#{$color});
+          --u-alert-color: var(--u-text-white);
+          --u-alert-icon-color: var(--u-text-white);
         }
       }
     }
     &.u-alert--outlined {
       --u-alert-bg: transparent;
-      --u-alert-color: var(--u-info-700);
-      border: 1px solid var(--u-primary-600);
+      --u-alert-color: var(--u-text-1);
+      border: 1px solid var(--u-primary);
     }
     &.u-alert--filled {
-      --u-alert-bg: var(--u-primary-600);
-      --u-alert-color: var(--u-info-50);
-      --u-alert-icon-color: var(--u-info-50);
+      --u-alert-bg: var(--u-primary);
+      --u-alert-color: var(--u-text-white);
+      --u-alert-icon-color: var(--u-text-white);
     }
 
     &_icon {

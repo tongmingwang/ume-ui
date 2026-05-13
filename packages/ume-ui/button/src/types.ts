@@ -1,6 +1,6 @@
 export interface ButtonProps {
-  color?: 'primary' | 'success' | 'warning' | 'error' | 'info' | '';
-  size?: 'small' | 'medium' | 'large' | '';
+  color?: 'primary' | 'success' | 'warning' | 'error' | '';
+  size?: 'mini' | 'small' | 'medium' | 'large' | '';
   disabled?: boolean;
   loading?: boolean;
   variant?: 'outlined' | 'text' | 'contained' | 'tonal' | '';

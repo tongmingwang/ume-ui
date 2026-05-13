@@ -14,7 +14,7 @@
   .u-card_text {
     margin: 0;
     padding: 16px;
-    color: var(--u-info-700);
+    color: var(--u-text-2);
     line-height: 1.6;
   }
 </style>

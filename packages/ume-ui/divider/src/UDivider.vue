@@ -1,6 +1,6 @@
 <template>
   <hr :class="classNames" :style="{
-    '--u-divider-color': props.color || 'rgba(var(--u-rgb), 0.2)',
+    '--u-divider-color': props.color || 'var(--u-border)',
   }">
   </hr>
 </template>
@@ -14,7 +14,7 @@
   });
   const props = withDefaults(defineProps<DividerProps>(), {
     vertical: false,
-    color: 'rgba(var(--u-rgb), 0.2)',
+    color: 'rgba(var(--u-rgb), 0.3)',
   });
 
   const classNames = computed(() => {

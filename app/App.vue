@@ -1,5 +1,5 @@
 <template>
-  <div class="demo">
+  <div class="demo_app">
     <div class="nav">
       <Btn
         v-for="item in routes"
@@ -39,8 +39,8 @@
   });
 </script>
 
-<style scoped lang="scss">
-  .demo {
+<style lang="scss">
+  .demo_app {
     display: flex;
     height: 100vh;
     margin: 0;
@@ -53,6 +53,7 @@
     border-right: 1px solid #e5e5e5;
     padding: 10px;
     position: sticky;
+    overflow-y: auto;
     top: 0;
     left: 0;
     .u-button {
@@ -62,5 +63,9 @@
   .content {
     flex: 1;
     padding: 24px;
+  }
+
+  .demo {
+    padding: 16px;
   }
 </style>

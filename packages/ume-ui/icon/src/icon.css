@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'u-iconfont'; /* Project id 5171714 */
-  src: url('./icon.woff2') format('woff2');
+  src: url('./icon.woff') format('woff');
 }
 
 .u-iconfont {

@@ -83,6 +83,7 @@
           ? [{ transform: 'translateY(100%)' }, { transform: 'translateY(0%)' }]
           : [
               { opacity: 0, transform: 'scale(0)' },
+              { opacity: 0.1, transform: 'scale(0.33)',offset: 0.33 },
               { opacity: 1, transform: 'scale(1)' },
             ],
         {
@@ -117,6 +118,7 @@
           ? [{ transform: 'translateY(0%)' }, { transform: 'translateY(100%)' }]
           : [
               { opacity: 1, transform: 'scale(1)' },
+              { opacity: 0.05, transform: 'scale(0.5)',offset: 0.33 },
               { opacity: 0, transform: 'scale(0)' },
             ],
         {
@@ -153,7 +155,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--u-mask-bg);
+      background-color: rgba(var(--u-rgb),0.33);
       z-index: 0;
     }
     .u-dialog_content {

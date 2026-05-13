@@ -44,7 +44,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--u-mask-bg);
+    background: rgba(var(--u-rgb),0.33);
     pointer-events: all;
     z-index: 1000;
   }

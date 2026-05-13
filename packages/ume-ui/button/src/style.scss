@@ -1,8 +1,8 @@
 .u-button,
 button {
-  --u-btn-height: 36px;
+  --u-btn-height: var(--u-medium);
   --u-btn-radius: 4px;
-  --u-btn-color: var(--u-primary-500);
+  --u-btn-color: var(--u-text-1);
   --u-btn-bg: transparent;
   display: inline-flex;
   align-items: center;
@@ -18,7 +18,7 @@ button {
   user-select: none;
   cursor: pointer;
   background: var(--u-btn-bg);
-  transition: background 0.2s;
+  transition: all 0.2s;
   font-weight: 500;
   color: var(--u-btn-color);
   overflow: hidden;
@@ -37,10 +37,7 @@ button {
     opacity: 1;
   }
   &:hover {
-    --u-btn-bg: var(--u-primary-50);
-  }
-  &:active {
-    --u-btn-bg: var(--u-primary-100);
+    --u-btn-bg: rgba(var(--u-rgb), 0.05);
   }
   &.is-disabled {
     pointer-events: none;
@@ -63,7 +60,7 @@ button {
     align-items: center;
     justify-content: center;
   }
-  .u-icon__svg {
+  .u-button_icon-loading {
     width: 1.2em;
     height: 1.2em;
     animation: rotate 1s linear infinite;
@@ -91,95 +88,100 @@ button {
     min-height: var(--u-btn-height);
   }
   // size
+  &--mini {
+    --u-btn-height: var(--u-mini);
+    padding: 0 4px;
+    font-size: 12px;
+  }
   &--small {
-    --u-btn-height: 28px;
+    --u-btn-height: var(--u-small);
     padding: 0 8px;
     font-size: 12px;
   }
   &--large {
-    --u-btn-height: 48px;
+    --u-btn-height: var(--u-large);
     padding: 0 16px;
     font-size: 18px;
   }
   &--medium {
-    --u-btn-height: 36px;
+    --u-btn-height: var(--u-medium);
     padding: 0 16px;
     font-size: 14px;
   }
 
   // variant
   &--outlined {
-    --u-btn-color: var(--u-primary-500);
+    --u-btn-color: var(--u-primary);
     --u-btn-bg: transparent;
-    border: 1px solid var(--u-primary-500);
+    border: 1px solid var(--u-primary);
     &:hover {
-      --u-btn-bg: var(--u-primary-50);
+      --u-btn-bg: var(--u-primary-light-hover);
     }
   }
   &--text {
-    --u-btn-color: var(--u-primary-500);
+    --u-btn-color: var(--u-primary);
     --u-btn-bg: transparent;
     border: none;
     padding: 0 8px;
     &:hover {
-      --u-btn-bg: var(--u-primary-50);
+      --u-btn-bg: var(--u-primary-light-hover);
     }
   }
   &--contained {
-    --u-btn-color: var(--u-info-50);
-    --u-btn-bg: var(--u-primary-500);
-    box-shadow: 0 1px 2px var(--u-btn-bg);
+    --u-btn-color: var(--u-text-white);
+    --u-btn-bg: var(--u-primary);
+    box-shadow: 0 1px 4px 0 rgba(var(--u-rgb), 0.25);
     &:hover {
-      --u-btn-bg: var(--u-primary-600);
+      --u-btn-bg: var(--u-primary-hover);
     }
   }
 
   &--tonal {
-    --u-btn-color: var(--u-primary-500);
-    --u-btn-bg: var(--u-primary-50);
+    --u-btn-color: var(--u-text-1);
+    --u-btn-bg: rgba(var(--u-rgb), 0.1);
     &:hover {
-      --u-btn-bg: var(--u-primary-100);
+      --u-btn-bg: rgba(var(--u-rgb), 0.05);
     }
   }
 
   // color
-  @each $color in primary, success, warning, error, info {
+  @each $color in primary, success, warning, error {
     &--#{$color} {
-      --u-btn-color: var(--u-info-50);
-      --u-btn-bg: var(--u-#{$color}-500);
+      --u-btn-color: var(--u-text-white);
+      --u-btn-bg: var(--u-#{$color});
       &:hover {
-        --u-btn-bg: var(--u-#{$color}-600);
+        --u-btn-bg: var(--u-#{$color}-hover);
       }
 
       &.u-button--outlined {
-        --u-btn-color: var(--u-#{$color}-600);
+        --u-btn-color: var(--u-#{$color});
         --u-btn-bg: transparent;
-        border: 1px solid var(--u-#{$color}-600);
+        border: 1px solid var(--u-#{$color});
         &:hover {
-          --u-btn-bg: var(--u-#{$color}-100);
+          --u-btn-bg: var(--u-#{$color}-light-hover);
         }
       }
 
       &.u-button--text {
-        --u-btn-color: var(--u-#{$color}-600);
+        --u-btn-color: var(--u-#{$color});
         --u-btn-bg: transparent;
         border: none;
         &:hover {
-          --u-btn-bg: var(--u-#{$color}-100);
+          --u-btn-bg: var(--u-#{$color}-light-hover);
         }
       }
       &.u-button--contained {
-        --u-btn-color: var(--u-info-50);
-        --u-btn-bg: var(--u-#{$color}-500);
+        --u-btn-color: var(--u-text-white);
+        --u-btn-bg: var(--u-#{$color});
         &:hover {
-          --u-btn-bg: var(--u-#{$color}-600);
+          --u-btn-bg: var(--u-#{$color}-hover);
         }
       }
       &.u-button--tonal {
-        --u-btn-color: var(--u-#{$color}-500);
-        --u-btn-bg: var(--u-#{$color}-50);
+        --u-btn-color: var(--u-#{$color});
+        --u-btn-bg: var(--u-#{$color}-light);
         &:hover {
-          --u-btn-bg: var(--u-#{$color}-100);
+          --u-btn-bg: var(--u-#{$color}-light-hover);
         }
       }
     }

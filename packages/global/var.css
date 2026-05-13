@@ -4,148 +4,110 @@ body[data-ume-ui-theme='light'],
 [data-ume-ui-theme='light'],
 html.light,
 body.light {
-  /* primary 600主色 */
-  --u-primary-50: #e6f7ff;
-  --u-primary-100: #bae7ff;
-  --u-primary-200: #91d5ff;
-  --u-primary-300: #69c0ff;
-  --u-primary-400: #40a9ff;
-  --u-primary-500: #1890ff;
-  --u-primary-600: #096dd9;
-  --u-primary-700: #0050b3;
-  --u-primary-800: #003a8c;
-  --u-primary-900: #002766;
+  /* primary 主色 (MUI Blue) */
+  --u-primary-light-hover: #e3f2fd;
+  --u-primary-light: #cbe8fd;
+  --u-primary-light-active: #aedcfd;
+  --u-primary-hover: #1565c0;
+  --u-primary: #1976d2;
+  --u-primary-active: #0d47a1;
 
-  /* 灰色 */
-  --u-info-50: #ffffff;
-  --u-info-100: #fafafa;
-  --u-info-200: #f5f5f5;
-  --u-info-300: #f0f0f0;
-  --u-info-400: #d9d9d9;
-  --u-info-500: #bfbfbf;
-  --u-info-600: #8c8c8c;
-  --u-info-700: #595959;
-  --u-info-800: #434343;
-  --u-info-900: #262626;
+  /* 成功色彩 (MUI Green) */
+  --u-success-light-hover: #e8f5e9; /* MUI green[50] */
+  --u-success-light: #c9e7c9; /* MUI green[200] */
+  --u-success-light-active: #ade6af; /* MUI green[300] */
+  --u-success-hover: #2e7d32; /* MUI green[800] */
+  --u-success: #388e3c; /* MUI green[700] */
+  --u-success-active: #1b5e20; /* MUI green[900] */
 
-  /* 成功色彩 */
-  --u-success-50: #f6ffed;
-  --u-success-100: #d9f7be;
-  --u-success-200: #b7eb8f;
-  --u-success-300: #95de64;
-  --u-success-400: #73d13d;
-  --u-success-500: #52c41a;
-  --u-success-600: #389e0d;
-  --u-success-700: #237804;
-  --u-success-800: #135200;
-  --u-success-900: #092b00;
+  /* 警告色彩 (MUI Orange) */
+  --u-warning-light-hover: #fff3e0; /* MUI orange[50] */
+  --u-warning-light: #fdeed6; /* MUI orange[200] */
+  --u-warning-light-active: #eed1a7; /* MUI orange[300] */
+  --u-warning-hover: #e65100; /* MUI orange[900] */
+  --u-warning: #ed6c02; /* MUI orange[700] 警告主色 */
+  --u-warning-active: #bf360c; /* MUI deepOrange[900] */
 
-  /* 警告色彩 */
-  --u-warning-50: #fff7e6;
-  --u-warning-100: #ffe7ba;
-  --u-warning-200: #ffd591;
-  --u-warning-300: #ffc069;
-  --u-warning-400: #ffa940;
-  --u-warning-500: #fa8c16;
-  --u-warning-600: #d46b08;
-  --u-warning-700: #ad4e00;
-  --u-warning-800: #873800;
-  --u-warning-900: #612500;
-
-  /* 错误色彩 */
-
-  --u-error-50: #fff1f0;
-  --u-error-100: #ffccc7;
-  --u-error-200: #ffa39e;
-  --u-error-300: #ff7875;
-  --u-error-400: #ff4d4f;
-  --u-error-500: #f5222d;
-  --u-error-600: #cf1322;
-  --u-error-700: #a8071a;
-  --u-error-800: #820014;
-  --u-error-900: #5c0011;
+  /* 错误色彩 (MUI Red) */
+  --u-error-light-hover: #ffebee; /* MUI red[50] */
+  --u-error-light: #fac8c8; /* MUI red[200] */
+  --u-error-light-active: #f0b4b4; /* MUI red[300] */
+  --u-error-hover: #c62828; /* MUI red[800] */
+  --u-error: #d32f2f; /* MUI red[700] 错误主色 */
+  --u-error-active: #b71c1c; /* MUI red[900] */
 
   /* 背景色 */
   --u-bg: #fff;
   --u-container-bg: #fafafa;
+  /* rgba 值 */
   --u-rgb: 0, 0, 0;
+  /* 主文本色彩 */
+  --u-text-1: rgba(0, 0, 0, 0.87); /* MUI text primary */
+  /* 此文本色彩 */
+  --u-text-2: rgba(0, 0, 0, 0.6); /* MUI text secondary */
+  /* 次文本色彩 */
+  --u-text-3: rgba(0, 0, 0, 0.38); /* MUI text disabled */
+  /* 白色字体 */
+  --u-text-white: #fff;
+  /* 边框颜色 */
+  --u-border: rgba(0, 0, 0, 0.12); /* MUI divider */
 
-  /* hover */
-  --u-hover: rgba(0, 0, 0, 0.05);
-  --u-mask-bg: rgba(0, 0, 0, 0.33);
+  /* size */
+  --u-small: 28px;
+  --u-mini: 24px;
+  --u-medium: 36px;
+  --u-large: 48px;
 }
 
-/* 暗黑主题 */
+/* 暗黑主题 (MUI Dark Mode 方案) */
 html[data-ume-ui-theme='dark'],
 body[data-ume-ui-theme='dark'],
 [data-ume-ui-theme='dark'],
 html.dark,
 body.dark {
-  --u-bg: #1f1f1f;
-  --u-container-bg: rgb(20, 20, 20);
-  --u-mask-bg: rgba(255, 255, 255, 0.33);
+  --u-bg: #121212; /* MUI dark background default */
+  --u-container-bg: #1e1e1e; /* MUI dark paper background */
   --u-rgb: 255, 255, 255;
+  /* 主文本色彩 */
+  --u-text-1: rgba(255, 255, 255, 0.9); /* MUI dark text primary */
+  /* 此文本色彩 */
+  --u-text-2: rgba(255, 255, 255, 0.7); /* MUI dark text secondary */
+  /* 次文本色彩 */
+  --u-text-3: rgba(255, 255, 255, 0.5); /* MUI dark text disabled */
+  /* 白色字体 */
+  --u-text-white: #121212;
+  /* 边框颜色 */
+  --u-border: rgba(255, 255, 255, 0.12); /* MUI dark divider */
 
-  /* primary 暗黑取反 - 50-900倒序 */
-  --u-primary-50: #002766;
-  --u-primary-100: #003a8c;
-  --u-primary-200: #0050b3;
-  --u-primary-300: #096dd9;
-  --u-primary-400: #1890ff;
-  --u-primary-500: #40a9ff;
-  --u-primary-600: #69c0ff;
-  --u-primary-700: #91d5ff;
-  --u-primary-800: #bae7ff;
-  --u-primary-900: #e6f7ff;
+  /* primary 主色 (MUI Dark Blue 适当提亮以保证对比度) */
+  --u-primary-light-hover: #0d47a1; /* MUI blue[900] */
+  --u-primary-light: #1565c0; /* MUI blue[800] */
+  --u-primary-light-active: #1976d2; /* MUI blue[700] */
+  --u-primary-hover: #42a5f5; /* MUI blue[400] */
+  --u-primary: #90caf9; /* MUI blue[200] */
+  --u-primary-active: #e3f2fd; /* MUI blue[50] */
 
-  /* 灰色 暗黑取反 - 50-900倒序 */
-  --u-info-50: #262626;
-  --u-info-100: #434343;
-  --u-info-200: #595959;
-  --u-info-300: #8c8c8c;
-  --u-info-400: #bfbfbf;
-  --u-info-500: #d9d9d9;
-  --u-info-600: #f0f0f0;
-  --u-info-700: #f5f5f5;
-  --u-info-800: #fafafa;
-  --u-info-900: #ffffff;
+  /* 成功色彩 (MUI Dark Green) */
+  --u-success-light-hover: #1b5e20; /* MUI green[900] */
+  --u-success-light: #2e7d32; /* MUI green[800] */
+  --u-success-light-active: #388e3c; /* MUI green[700] */
+  --u-success-hover: #81c784; /* MUI green[300] */
+  --u-success: #a5d6a7; /* MUI green[200] */
+  --u-success-active: #e8f5e9; /* MUI green[50] */
 
-  /* 成功色彩 暗黑取反 - 50-900倒序 */
-  --u-success-50: #092b00;
-  --u-success-100: #135200;
-  --u-success-200: #237804;
-  --u-success-300: #389e0d;
-  --u-success-400: #52c41a;
-  --u-success-500: #73d13d;
-  --u-success-600: #95de64;
-  --u-success-700: #b7eb8f;
-  --u-success-800: #d9f7be;
-  --u-success-900: #f6ffed;
+  /* 警告色彩 (MUI Dark Orange) */
+  --u-warning-light-hover: #bf360c; /* MUI deepOrange[900] */
+  --u-warning-light: #e65100; /* MUI orange[900] */
+  --u-warning-light-active: #ed6c02; /* MUI orange[700] */
+  --u-warning-hover: #ffb74d; /* MUI orange[300] */
+  --u-warning: #ffcc80; /* MUI orange[200] */
+  --u-warning-active: #fff3e0; /* MUI orange[50] */
 
-  /* 警告色彩 暗黑取反 - 50-900倒序 */
-  --u-warning-50: #612500;
-  --u-warning-100: #873800;
-  --u-warning-200: #ad4e00;
-  --u-warning-300: #d46b08;
-  --u-warning-400: #fa8c16;
-  --u-warning-500: #ffa940;
-  --u-warning-600: #ffc069;
-  --u-warning-700: #ffd591;
-  --u-warning-800: #ffe7ba;
-  --u-warning-900: #fff7e6;
-
-  /* 错误色彩 暗黑取反 - 50-900倒序 */
-  --u-error-50: #5c0011;
-  --u-error-100: #820014;
-  --u-error-200: #a8071a;
-  --u-error-300: #cf1322;
-  --u-error-400: #f5222d;
-  --u-error-500: #ff4d4f;
-  --u-error-600: #ff7875;
-  --u-error-700: #ffa39e;
-  --u-error-800: #ffccc7;
-  --u-error-900: #fff1f0;
-
-  /* hover */
-  --u-hover: rgba(255, 255, 255, 0.05);
+  /* 错误色彩 (MUI Dark Red) */
+  --u-error-light-hover: #640808; /* MUI red[900] */
+  --u-error-light: #580101; /* MUI red[800] */
+  --u-error-light-active: #3a0101; /* MUI red[700] */
+  --u-error-hover: #ef9a9a; /* MUI red[200] */
+  --u-error: #e57373; /* MUI red[300] */
+  --u-error-active: #ffebee; /* MUI red[50] */
 }

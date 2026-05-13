@@ -53,7 +53,7 @@
 
 <style lang="scss" scoped>
   .u-radio-group {
-    --u-radio-color: var(--u-info-900);
+    --u-radio-color: var(--u-text-1);
     --u-radio-bg: transparent;
 
     display: inline-flex;
@@ -68,10 +68,10 @@
       pointer-events: none;
       opacity: 0.65;
     }
-    @each $color in primary, success, warning, error, info {
+    @each $color in primary, success, warning, error {
       &--#{$color} {
-        --u-radio-color: var(--u-#{$color}-600);
-        --u-radio-bg: var(--u-#{$color}-50);
+        --u-radio-color: var(--u-#{$color});
+        --u-radio-bg: var(--u-#{$color}-light);
       }
     }
   }

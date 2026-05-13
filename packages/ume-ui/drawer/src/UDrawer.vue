@@ -118,7 +118,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: var(--u-mask-bg);
+      background: rgba(var(--u-rgb), 0.33);
     }
     &_content {
       position: absolute;
@@ -127,6 +127,7 @@
       overflow-y: auto;
       background: var(--u-bg, #fff);
       z-index: 1000;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.12));
     }
     &_left {
       width: var(--u-drawer-size, 240px);

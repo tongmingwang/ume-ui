@@ -46,9 +46,10 @@ Buttons support different variant styles including contained, outlined, text, an
 
 ## Different Sizes
 
-Buttons have three sizes: small, medium, large.
+Buttons have four sizes: mini, small, medium, large.
 
 <div class="button-group">
+  <u-button size="mini">Mini</u-button>
   <u-button size="small">Small</u-button>
   <u-button size="medium">Medium</u-button>
   <u-button size="large">Large</u-button>
@@ -56,6 +57,7 @@ Buttons have three sizes: small, medium, large.
 
 ```vue
 <template>
+  <u-button size="mini">Mini</u-button>
   <u-button size="small">Small</u-button>
   <u-button size="medium">Medium</u-button>
   <u-button size="large">Large</u-button>
@@ -132,17 +134,17 @@ Customize button size via `width` and `height` attributes.
 
 ## API
 
-| Attribute | Description | Type | Default |
-|-----------|-------------|------|---------|
-| color | Button color | `default \| primary \| success \| warning \| error` | `default` |
-| variant | Button variant | `contained \| outlined \| text \| tonal` | `contained` |
-| size | Button size | `small \| medium \| large` | `medium` |
-| shape | Button shape | `default \| round \| circle` | `default` |
-| disabled | Whether disabled | `boolean` | `false` |
-| loading | Whether loading | `boolean` | `false` |
-| width | Custom width | `string` | - |
-| height | Custom height | `string` | - |
-| icon | Whether icon mode | `boolean` | `false` |
+| Attribute | Description       | Type                                                | Default     |
+| --------- | ----------------- | --------------------------------------------------- | ----------- |
+| color     | Button color      | `default \| primary \| success \| warning \| error` | `default`   |
+| variant   | Button variant    | `contained \| outlined \| text \| tonal`            | `contained` |
+| size      | Button size       | `mini \| small \| medium \| large`                  | `medium`    |
+| shape     | Button shape      | `default \| round \| circle`                        | `default`   |
+| disabled  | Whether disabled  | `boolean`                                           | `false`     |
+| loading   | Whether loading   | `boolean`                                           | `false`     |
+| width     | Custom width      | `string`                                            | -           |
+| height    | Custom height     | `string`                                            | -           |
+| icon      | Whether icon mode | `boolean`                                           | `false`     |
 
 <style scoped>
   .button-group {
