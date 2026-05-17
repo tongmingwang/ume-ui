@@ -1,7 +1,7 @@
 import type { InjectionKey, Ref } from 'vue';
 
 export interface TabPaneProps {
-  name: string;
+  name: string | number;
   label?: string;
   disabled?: boolean;
 }
@@ -13,7 +13,7 @@ export interface TabsProps {
 }
 
 export interface TabPane {
-  name: string;
+  name: string | number;
   label: string;
   disabled: boolean;
 }
@@ -24,7 +24,7 @@ export interface TabsContext {
   animated: Ref<boolean>;
   direction: Ref<'left' | 'right'>;
   registerPane: (pane: TabPane) => void;
-  unregisterPane: (name: string) => void;
+  unregisterPane: (name: string | number) => void;
   updateActive: (name: string) => void;
 }
 

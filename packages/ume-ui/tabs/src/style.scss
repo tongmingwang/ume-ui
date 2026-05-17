@@ -21,6 +21,7 @@
     user-select: none;
     transition: color 0.2s;
     white-space: nowrap;
+    border-radius: 4px 4px 0 0;
 
     &:hover {
       color: var(--u-text-1);

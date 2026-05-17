@@ -1,10 +1,9 @@
 <template>
-  <Transition :name="transitionName">
-    <div
-      v-show="isActive"
-      class="u-tab-pane"
-      :class="{ 'is-active': isActive }">
-      <slot />
+  <Transition @enter="onEnter" @leave="onLeave">
+    <div v-if="isActive" class="u-tab-pane">
+      <div class="w-full h-full">
+        <slot />
+      </div>
     </div>
   </Transition>
 </template>
@@ -21,10 +20,6 @@
 
   const tabsContext = inject(tabsKey, null);
   const isActive = computed(() => tabsContext?.activeName.value === props.name);
-  const transitionName = computed(() => {
-    if (!tabsContext?.animated.value) return '';
-    return `u-tab-pane-${tabsContext.direction.value}`;
-  });
 
   const register = () => {
     tabsContext?.registerPane({
@@ -48,39 +43,49 @@
     tabsContext?.unregisterPane(props.name);
   });
 
+  const onEnter = async (el: Element, done: () => void) => {
+    if (!tabsContext?.animated.value) {
+      done();
+      return;
+    }
+    const transform =
+      tabsContext?.direction.value === 'right'
+        ? 'translateX(100%)'
+        : 'translateX(-100%)';
+    const frame = el.animate(
+      [{ transform: transform }, { transform: 'translateX(0)' }],
+      {
+        duration: 300,
+        easing: 'ease',
+      }
+    );
+    Array.from(el.children).forEach((child) => {
+      child.animate(
+        [{ opacity: 0 }, { opacity: 0, offset: 0.5 }, { opacity: 1 }],
+        {
+          duration: 300,
+          easing: 'ease',
+        }
+      );
+    });
+    await frame.finished;
+
+    done();
+  };
+  const onLeave = async (el: Element, done: () => void) => {
+    const frame = el.animate([{ opacity: 1 }, { opacity: 0 }], {
+      duration: 150,
+      easing: 'ease',
+    });
+    await frame.finished;
+    done();
+  };
+
   defineOptions({ name: 'UTabPane' });
 </script>
 
 <style lang="scss" scoped>
   .u-tab-pane {
     grid-area: 1 / 1;
-  }
-</style>
-
-<style lang="scss">
-  .u-tab-pane-right-enter-active,
-  .u-tab-pane-right-leave-active,
-  .u-tab-pane-left-enter-active,
-  .u-tab-pane-left-leave-active {
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .u-tab-pane-right-enter-from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  .u-tab-pane-right-leave-to {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  .u-tab-pane-left-enter-from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  .u-tab-pane-left-leave-to {
-    opacity: 0;
-    transform: translateX(20px);
   }
 </style>
