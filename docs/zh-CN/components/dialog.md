@@ -1,27 +1,25 @@
 # Dialog 对话框
 
-模态对话框组件，用于显示重要信息或要求用户确认，支持优雅的入场动画效果。
-
-**依赖组件：**
-
-- `UMask` - 遮罩层组件
+用于显示重要信息或需要用户确认的模态对话框组件，带有优雅的入场动画。
 
 ## 基础用法
 
 最简单的对话框用法，默认居中显示并带有缩放动画。
 
 <div class="demo-section">
-  <u-button @click="visible1 = true" color="primary">打开对话框</u-button>
-  <u-dialog v-model="visible1">
+  <u-dialog v-model="visible1" width="500px">
     <u-card class="dialog-card">
       <u-card-title>基础对话框</u-card-title>
       <u-card-text>
-        <p>这是一个基础对话框，支持点击遮罩或按 ESC 键关闭。</p>
+        <p>这是一个基础对话框，可以通过点击遮罩层或按 ESC 键关闭。</p>
       </u-card-text>
-      <div class="dialog-actions">
-        <u-button @click="visible1 = false" color="primary">确定</u-button>
-      </div>
+      <u-card-action class="dialog-actions">
+        <u-button @click="visible1 = false" color="primary" variant="text">确定</u-button>
+      </u-card-action>
     </u-card>
+    <template v-slot:trigger="{props}">
+        <u-button @click="visible1 = true" v-bind="props" color="primary">打开对话框</u-button>
+     </template>
   </u-dialog>
 </div>
 
@@ -35,7 +33,7 @@
         <p>这是一个基础对话框。</p>
       </u-card-text>
       <div class="dialog-actions">
-        <u-button @click="visible = false" color="primary">确定</u-button>
+        <u-button @click="visible = false" color="primary" variant="text">确定</u-button>
       </div>
     </u-card>
   </u-dialog>
@@ -57,7 +55,7 @@
     <u-card class="dialog-card">
       <u-card-title>自定义宽度</u-card-title>
       <u-card-text>
-        <p>此对话框宽度为 400px，可以根据需求设置任意宽度值。</p>
+        <p>此对话框宽度为 400px。您可以根据需要设置任意宽度值。</p>
       </u-card-text>
       <div class="dialog-actions">
         <u-button @click="visible2 = false" color="primary">确定</u-button>
@@ -88,17 +86,17 @@
 </script>
 ```
 
-## 禁止点击遮罩关闭
+## 禁用点击遮罩关闭
 
-通过 `closeOnClick` 属性设置是否点击遮罩关闭对话框。
+禁止点击遮罩层关闭对话框。
 
 <div class="demo-section">
-  <u-button @click="visible3 = true" color="warning">禁止点击关闭</u-button>
+  <u-button @click="visible3 = true" color="warning">禁用遮罩关闭</u-button>
   <u-dialog v-model="visible3" :close-on-click="false">
     <u-card class="dialog-card">
-      <u-card-title>禁止点击遮罩关闭</u-card-title>
+      <u-card-title>禁用遮罩关闭</u-card-title>
       <u-card-text>
-        <p>点击遮罩层不会关闭此对话框，只能通过按钮关闭。</p>
+        <p>点击遮罩层不会关闭此对话框。只有按钮可以关闭它。</p>
       </u-card-text>
       <div class="dialog-actions">
         <u-button @click="visible3 = false" color="primary">确定</u-button>
@@ -109,10 +107,12 @@
 
 ```vue
 <template>
-  <u-button @click="visible = true" color="warning">禁止点击关闭</u-button>
+  <u-button @click="visible = true" color="warning">
+    禁用遮罩关闭
+  </u-button>
   <u-dialog v-model="visible" :close-on-click="false">
     <u-card>
-      <u-card-title>禁止点击遮罩关闭</u-card-title>
+      <u-card-title>禁用遮罩关闭</u-card-title>
       <u-card-text>
         <p>点击遮罩层不会关闭此对话框。</p>
       </u-card-text>
@@ -131,7 +131,7 @@
 
 ## 全屏对话框
 
-以全屏模式显示对话框，带有从底部滑入的动画效果。
+以全屏模式显示对话框，带有滑入动画。
 
 <div class="demo-section">
   <u-button @click="visible4 = true" color="error">全屏对话框</u-button>
@@ -139,7 +139,7 @@
     <u-card class="dialog-card fullscreen-card">
       <u-card-title>全屏模式</u-card-title>
       <u-card-text>
-        <p>这是一个占据整个视口的全屏对话框，适合需要展示大量内容的场景。</p>
+        <p>这是一个占据整个视口的全屏对话框，适合显示大型内容。</p>
       </u-card-text>
       <div class="dialog-actions">
         <u-button @click="visible4 = false" color="primary">关闭</u-button>
@@ -155,7 +155,7 @@
     <u-card>
       <u-card-title>全屏模式</u-card-title>
       <u-card-text>
-        <p>这是一个占据整个视口的全屏对话框。</p>
+        <p>这是一个全屏对话框。</p>
       </u-card-text>
       <div class="dialog-actions">
         <u-button @click="visible = false" color="primary">关闭</u-button>
@@ -172,7 +172,7 @@
 
 ## 确认对话框
 
-配合按钮组实现标准的确认对话框模式。
+带有按钮组的标准确认对话框模式。
 
 <div class="demo-section">
   <u-button @click="visible5 = true" color="primary">确认对话框</u-button>
@@ -180,7 +180,7 @@
     <u-card class="dialog-card">
       <u-card-title>确认删除</u-card-title>
       <u-card-text>
-        <p>确定要删除这条记录吗？此操作不可撤销。</p>
+        <p>确定要删除此记录吗？此操作无法撤销。</p>
       </u-card-text>
       <div class="dialog-actions">
         <u-button @click="visible5 = false">取消</u-button>
@@ -197,7 +197,9 @@
     <u-card>
       <u-card-title>确认删除</u-card-title>
       <u-card-text>
-        <p>确定要删除这条记录吗？此操作不可撤销。</p>
+        <p>
+          确定要删除此记录吗？此操作无法撤销。
+        </p>
       </u-card-text>
       <div class="dialog-actions">
         <u-button @click="visible = false">取消</u-button>
@@ -215,27 +217,26 @@
 
 ## UDialog API
 
-| 属性         | 说明              | 类型      | 默认值  |
-| ------------ | ----------------- | --------- | ------- |
-| modelValue   | 是否显示          | `boolean` | `false` |
-| width        | 对话框宽度        | `string`  | `90%`   |
-| fullscreen   | 是否全屏模式      | `boolean` | `false` |
-| closeOnClick | 是否点击遮罩关闭  | `boolean` | `true`  |
-| closeOnEsc   | 是否按 ESC 键关闭 | `boolean` | `true`  |
-| trigger      | 触发元素引用      | `HTMLElement` | -    |
+| 属性          | 说明                     | 类型      | 默认值  |
+| ------------- | ------------------------ | --------- | ------- |
+| modelValue    | 是否显示对话框           | `boolean` | `false` |
+| width         | 对话框宽度               | `string`  | `90%`   |
+| fullscreen    | 是否使用全屏模式         | `boolean` | `false` |
+| closeOnClick  | 点击遮罩层是否关闭       | `boolean` | `true`  |
+| closeOnEsc    | 按 ESC 键是否关闭        | `boolean` | `true`  |
 
 ## UDialog 插槽
 
-| 插槽名  | 说明             |
-| ------- | ---------------- |
-| default | 对话框主体内容   |
+| 插槽    | 说明         |
+| ------- | ------------ |
+| default | 对话框内容   |
 
 ## UDialog 事件
 
-| 事件               | 说明             |
-| ------------------ | ---------------- |
-| update:modelValue  | 可见性改变时触发 |
-| close              | 对话框关闭时触发 |
+| 事件              | 说明               |
+| ----------------- | ------------------ |
+| update:modelValue | 可见性改变时触发   |
+| close             | 对话框关闭时触发   |
 
 <script setup>
   import { ref } from 'vue';

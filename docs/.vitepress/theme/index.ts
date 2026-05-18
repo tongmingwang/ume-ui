@@ -3,9 +3,9 @@ import { h } from 'vue';
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import './style.css';
-import '../../../output/dist/color.css';
-import '../../../output/dist/index.css';
-import ume from '../../../output';
+import 'ume-ui/dist/color.css';
+import 'ume-ui/dist/index.css';
+import ume from 'ume-ui';
 import BackToTop from './components/BackToTop.vue';
 import Layout from './components/Layout.vue';
 
