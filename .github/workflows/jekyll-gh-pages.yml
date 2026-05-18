@@ -26,29 +26,29 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Setup npm
+        uses: npm/action-setup@v4
         with:
-          version: 9
+          version: 10
           run_install: false
 
-      - name: Check pnpm installation
+      - name: Check npm installation
         run: |
-          echo "PNPM path: $(which pnpm)"
-          pnpm --version
+          echo "NPM path: $(which npm)"
+          npm --version
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm # 或 pnpm / yarn
+          cache: npm # 或 pnpm / yarn
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build docs
-        run: pnpm run docs:build
+        run: npm run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
